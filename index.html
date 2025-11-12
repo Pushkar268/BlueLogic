@@ -4,121 +4,88 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BlueLogic Digital (OPC) Pvt. Ltd | IT Solutions & Services</title>
+  <link rel="icon" type="image/png" href="bluelogic-logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    * {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif;}
-    body {color:#222; background-color:#f9fbfc;}
-    .navbar {background:#0b132b; color:#fff; display:flex; justify-content:space-between; align-items:center; padding:1rem 3rem; position:sticky; top:0; z-index:1000;}
-    .navbar .logo {font-size:1.5rem; font-weight:bold;}
-    .navbar .logo span {color:#00aaff;}
-    .navbar nav a {color:#fff; text-decoration:none; margin-left:1.5rem; font-weight:500; transition:color 0.3s;}
-    .navbar nav a:hover {color:#00aaff;}
-    .hero {background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://images.unsplash.com/photo-1498050108023-c5249f4df085') center/cover; color:#fff; text-align:center; padding:8rem 2rem;}
-    .hero h1 {font-size:2.5rem; margin-bottom:1rem;}
-    .btn-primary {display:inline-block; background:#00aaff; color:#fff; padding:0.8rem 1.5rem; margin-top:1rem; border-radius:5px; text-decoration:none; font-weight:600;}
-    .btn-primary:hover {background:#0088cc;}
-
-    .services {padding:4rem 2rem; text-align:center; position:relative;}
-    .services h2 {color:#0b132b; font-size:2rem; margin-bottom:2rem;}
-    .service-container {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2rem;}
-
-    .service-card {perspective: 1000px;}
-    .service-inner {position:relative; width:100%; height:270px; text-align:center; transition:transform 0.6s; transform-style:preserve-3d; cursor:pointer;}
-    .service-card.flipped .service-inner {transform:rotateY(180deg);}
-
-    .service-front, .service-back {position:absolute; width:100%; height:100%; border-radius:10px; backface-visibility:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.1); padding:1.5rem; display:flex; flex-direction:column; align-items:center; justify-content:center;}
-    .service-front img {width:60px; height:60px; margin-bottom:1rem;}
-    .service-front {background:#fff;}
-    .service-back {background:#00aaff; color:#fff; transform:rotateY(180deg);}
-
-    .about {background:#e8f4fa; text-align:center; padding:4rem 2rem;}
-    .about p {max-width:700px; margin:auto; font-size:1.1rem; line-height:1.6;}
-
-    .contact {padding:4rem 2rem; text-align:center;}
-    .contact-details {margin-top:1.5rem; font-size:1.1rem; color:#0b132b;}
+    * {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;}
+    body {background: radial-gradient(circle at top, #0b132b 0%, #1a1a2e 100%); color:#e0e6f0; scroll-behavior:smooth; opacity:0; animation: pageFadeIn 1.2s ease-in-out forwards;}
+    @keyframes pageFadeIn {from {opacity:0; transform:translateY(-20px);} to {opacity:1; transform:translateY(0);}}
+    .navbar {background:rgba(11,19,43,0.85); backdrop-filter:blur(12px); display:flex; justify-content:space-between; align-items:center; padding:1rem 3rem; position:sticky; top:0; z-index:1000; box-shadow:0 4px 20px rgba(0,170,255,0.3); border-bottom:1px solid rgba(255,255,255,0.1); transition:all 0.3s ease; opacity:0; animation: fadeSlideIn 1.5s ease forwards;}
+    .navbar.scrolled {background:rgba(11,19,43,0.95); box-shadow:0 8px 30px rgba(0,170,255,0.6);}
+    .logo {display:flex; align-items:center; font-size:1.6rem; font-weight:700; color:#fff; opacity:0; animation: fadeSlideIn 1.8s ease 0.3s forwards;}
+    .logo img {height:60px; margin-right:10px; filter:drop-shadow(0 0 10px #00aaff);}
+    .logo span {color:#00aaff; margin-left:5px;}
+    nav a {color:#fff; text-decoration:none; margin-left:1.5rem; font-weight:500; transition:0.3s;}
+    nav a:hover {color:#00aaff;}
+    @keyframes fadeSlideIn {0% {opacity:0; transform:translateY(-20px);} 100% {opacity:1; transform:translateY(0);}}
+    .hero {background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?auto=format&fit=crop&w=1400&q=80') center/cover; color:#fff; text-align:center; padding:10rem 2rem;}
+    .hero h1 {font-size:2.8rem; text-shadow:0 0 15px rgba(0,170,255,0.6); margin-bottom:1rem;}
+    .hero p {max-width:700px; margin:auto; font-size:1.1rem; line-height:1.5;}
+    .btn-primary {display:inline-block; background:#00aaff; color:#fff; padding:0.9rem 1.7rem; margin-top:1.5rem; border-radius:8px; text-decoration:none; font-weight:600; box-shadow:0 0 20px rgba(0,170,255,0.5); transition:0.3s;}
+    .btn-primary:hover {background:#0088cc; transform:translateY(-3px);}
+    .services {padding:4rem 2rem; text-align:center;}
+    .services h2 {color:#00aaff; font-size:2.2rem; margin-bottom:3rem; text-shadow:0 0 8px rgba(0,170,255,0.4);}
+    .service-container {display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:2.5rem;}
+    .service-card {background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:15px; padding:2rem; transition:all 0.6s ease; box-shadow:0 0 15px rgba(0,170,255,0.1); opacity:0; transform:translateY(40px);}
+    .service-card.visible {opacity:1; transform:translateY(0);}
+    .service-card:hover {transform:translateY(-10px); box-shadow:0 0 25px rgba(0,170,255,0.4);}
+    .service-card img {width:75px; margin-bottom:1.2rem; display:block; margin:auto; filter:sepia(1) saturate(10) hue-rotate(180deg) brightness(1.2) drop-shadow(0 0 5px rgba(0,195,255,0.5)); transition:transform 0.3s ease;}
+    .service-card img:hover {transform:scale(1.08);}
+    .service-card h3 {color:#00c3ff; margin-bottom:0.5rem;}
+    .about, .contact {background:rgba(255,255,255,0.05); text-align:center; padding:4rem 2rem; border-top:1px solid rgba(255,255,255,0.1); border-bottom:1px solid rgba(255,255,255,0.1); opacity:0; transform:translateY(40px); transition:all 0.8s ease;}
+    .about.visible, .contact.visible {opacity:1; transform:translateY(0);}
+    .contact-details {margin:1rem auto 2rem;}
     .contact-details a {color:#00aaff; text-decoration:none;}
-    .contact-details a:hover {text-decoration:underline;}
-    .whatsapp-btn {display:inline-flex; align-items:center; justify-content:center; background:#25D366; color:#fff; padding:0.8rem 1.5rem; border-radius:30px; text-decoration:none; font-weight:600; font-size:1rem; margin-top:1rem;}
-    .whatsapp-btn:hover {background:#1ebe57;}
     .contact-form {display:flex; flex-direction:column; max-width:400px; margin:2rem auto;}
-    .contact-form input, .contact-form textarea {margin-bottom:1rem; padding:0.8rem; border:1px solid #ccc; border-radius:5px;}
-    .contact-form button {background:#00aaff; color:#fff; border:none; padding:0.8rem; cursor:pointer; border-radius:5px;}
+    .contact-form input, .contact-form textarea {margin-bottom:1rem; padding:0.8rem; border:1px solid rgba(255,255,255,0.2); border-radius:8px; background:rgba(255,255,255,0.05); color:#fff;}
+    .contact-form button {background:#00aaff; color:#fff; border:none; padding:0.8rem; cursor:pointer; border-radius:8px; transition:0.3s;}
     .contact-form button:hover {background:#0088cc;}
-    footer {background:#0b132b; color:#fff; text-align:center; padding:1rem; font-size:0.9rem;}
+    .whatsapp-btn {display:inline-flex; align-items:center; justify-content:center; background:#128C7E; color:#fff; padding:0.8rem 1.5rem; border-radius:30px; text-decoration:none; font-weight:600; font-size:1rem; margin-top:1rem; transition:0.3s; box-shadow:0 0 10px rgba(18,140,126,0.3);}
+    footer {background:#0b132b; color:#ccc; text-align:center; padding:1rem; font-size:0.9rem; border-top:1px solid rgba(255,255,255,0.1);}
   </style>
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">BlueLogic <span>Digital (OPC) Pvt. Ltd</span></div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <header class='navbar' id='navbar'>
+    <div class='logo'><img src='bluelogic-logo.png' alt='BlueLogic Digital Logo' /> BlueLogic <span>Digital (OPC) Pvt. Ltd</span></div>
+    <nav><a href='#home'>Home</a><a href='#services'>Services</a><a href='#about'>About</a><a href='#contact'>Contact</a></nav>
   </header>
-
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>Empowering Businesses with Smart IT Solutions</h1>
-      <p>We deliver cutting-edge technology and cloud solutions to help your business grow securely and efficiently.</p>
-      <a href="#contact" class="btn-primary">Get in Touch</a>
-    </div>
+  <section class='hero' id='home'>
+    <h1>Empowering Businesses with Smart IT Solutions</h1>
+    <p>We deliver cutting-edge technology and cloud solutions to help your business grow securely and efficiently.</p>
+    <a href='#contact' class='btn-primary'>Get in Touch</a>
   </section>
-
-  <section id="services" class="services">
+  <section class='services' id='services'>
     <h2>Our Services</h2>
-    <div class="service-container">
-      <div class="service-card"><div class="service-inner"><div class="service-front"><img src="https://cdn-icons-png.flaticon.com/512/4149/4149652.png"><h3> Cloud Computing</h3><p>Scalable and secure cloud solutions.</p></div><div class="service-back"><p>We design, deploy, and manage AWS, Azure, and GCP cloud infrastructure with optimized performance and strong data security.</p></div></div></div>
-      <div class="service-card"><div class="service-inner"><div class="service-front"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"><h3>🔒 Cybersecurity</h3><p>Protect your digital assets.</p></div><div class="service-back"><p>Advanced firewalls, antivirus, endpoint security, and network monitoring solutions to safeguard your business.</p></div></div></div>
-      <div class="service-card"><div class="service-inner"><div class="service-front"><img src="https://cdn-icons-png.flaticon.com/512/2910/2910768.png"><h3>🎥 Surveillance & Security</h3><p>24/7 monitoring and safety.</p></div><div class="service-back"><p>We install and configure CCTV, IP camera, and access control systems for business and residential use.</p></div></div></div>
-      <div class="service-card"><div class="service-inner"><div class="service-front"><img src="https://cdn-icons-png.flaticon.com/512/732/732221.png"><h3>💼 Microsoft Applications</h3><p>End-to-end Microsoft services.</p></div><div class="service-back"><p>Implementation and support for Office 365, Dynamics 365, SharePoint, and Azure cloud services.</p></div></div></div>
-      <div class="service-card"><div class="service-inner"><div class="service-front"><img src="https://cdn-icons-png.flaticon.com/512/1048/1048946.png"><h3>🧠 PC & Gaming Setup</h3><p>Custom builds and optimization.</p></div><div class="service-back"><p>We build, upgrade, and optimize PCs and gaming rigs for performance and durability.</p></div></div></div>
-      <div class="service-card"><div class="service-inner"><div class="service-front"><img src="https://cdn-icons-png.flaticon.com/512/942/942751.png"><h3>💾 Data Recovery</h3><p>Recover lost data safely.</p></div><div class="service-back"><p>We recover data from drives, SSDs, and RAID setups using professional-grade recovery tools.</p></div></div></div>
-      <div class="service-card"><div class="service-inner"><div class="service-front"><img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png"><h3>📡 Networking</h3><p>Broadband & enterprise solutions.</p></div><div class="service-back"><p>Design and deploy enterprise-grade broadband, router, and switch configurations for seamless communication.</p></div></div></div>
-      <div class="service-card"><div class="service-inner"><div class="service-front"><img src="https://cdn-icons-png.flaticon.com/512/1006/1006771.png"><h3>🌐 Web Hosting</h3><p>Secure & fast web solutions.</p></div><div class="service-back"><p>Domain registration, hosting, SSL, and website maintenance with 99.9% uptime guarantee.</p></div></div></div>
-      <div class="service-card"><div class="service-inner"><div class="service-front"><img src="https://cdn-icons-png.flaticon.com/512/1006/1006775.png"><h3>🖊️ Digital Signatures</h3><p>Legally valid e-signing.</p></div><div class="service-back"><p>We provide Class 3 DSCs and secure document authentication services for businesses and individuals.</p></div></div></div>
+    <div class='service-container'>
+      <div class='service-card'><img src='https://cdn-icons-png.flaticon.com/512/4149/4149652.png'><h3>Cloud Computing</h3><p>We design, deploy, and manage cloud infrastructure with optimized performance and strong data security.</p></div>
+      <div class='service-card'><img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'><h3>Cybersecurity</h3><p>Advanced firewalls, antivirus, and endpoint security to safeguard your business.</p></div>
+      <div class='service-card'><img src='https://cdn-icons-png.flaticon.com/512/2910/2910768.png'><h3>Surveillance & Security</h3><p>We install and configure CCTV and IP camera systems for 24/7 monitoring.</p></div>
+      <div class='service-card'><img src='https://cdn-icons-png.flaticon.com/512/732/732221.png'><h3>Microsoft Applications</h3><p>Implementation and support for Office 365, Dynamics 365, SharePoint, and Azure cloud services.</p></div>
+      <div class='service-card'><img src='https://cdn-icons-png.flaticon.com/512/281/281769.png'><h3>PC & Gaming Setup</h3><p>Custom builds, optimizations, and setup solutions for personal and gaming computers.</p></div>
+      <div class='service-card'><img src='https://cdn-icons-png.flaticon.com/512/942/942751.png'><h3>Data Recovery</h3><p>We recover lost data from drives, SSDs, and RAID setups using professional-grade recovery tools.</p></div>
+      <div class='service-card'><img src='https://cdn-icons-png.flaticon.com/512/1041/1041916.png'><h3>Networking</h3><p>Design and deploy enterprise-grade broadband, routers, and switches for seamless connectivity.</p></div>
+      <div class='service-card'><img src='https://cdn-icons-png.flaticon.com/512/1006/1006771.png'><h3>Web Hosting</h3><p>Domain registration, hosting, SSL, and maintenance with 99.9% uptime guarantee.</p></div>
+      <div class='service-card'><img src='https://cdn-icons-png.flaticon.com/512/1006/1006775.png'><h3>Digital Signatures</h3><p>We provide Class 3 DSCs and secure document authentication services for businesses and individuals.</p></div>
     </div>
   </section>
-
-  <section id="about" class="about">
+  <section class='about' id='about'>
     <h2>About Us</h2>
-    <p>BlueLogic Digital (OPC) Pvt. Ltd is a full-service IT solutions provider helping businesses harness the power of technology. From cloud transformation to cybersecurity, we deliver reliable and future-ready solutions that make your IT simple, secure, and scalable.</p>
+    <p>BlueLogic Digital (OPC) Pvt. Ltd is a comprehensive IT solutions provider helping businesses leverage technology efficiently. We specialize in IT infrastructure, cybersecurity, networking, cloud transformation, and managed services. Our mission is to deliver scalable and reliable IT services that drive innovation and growth.</p>
   </section>
-
-  <section id="contact" class="contact">
+  <section class='contact' id='contact'>
     <h2>Contact Us</h2>
-    <p>Have a project or need technical support? Let's talk!</p>
-    <div class="contact-details">
-      <p>📧 Email: <a href="mailto:info@bluelogicdigital.com">info@bluelogicdigital.com</a></p>
-      <p>📞 Phone: <a href="tel:+918806259143">+91 88062 59143</a></p>
-      <a class="whatsapp-btn" href="https://wa.me/918806259143" target="_blank">💬 Chat on WhatsApp</a>
-    </div>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+    <p>Have a project or need technical support? Let's connect!</p>
+    <div class='contact-details'><p>📧 Email: <a href='mailto:info@bluelogicdigital.com'>info@bluelogicdigital.com</a></p><p>📞 Phone: <a href='tel:+918806259143'>+91 88062 59143</a></p><a class='whatsapp-btn' href='https://wa.me/918806259143' target='_blank'>💬 Chat on WhatsApp</a></div>
+    <form class='contact-form'><input type='text' placeholder='Your Name' required /><input type='email' placeholder='Your Email' required /><textarea placeholder='Your Message' required></textarea><button type='submit'>Send Message</button></form>
   </section>
-
-  <footer>
-    <p>© 2025 BlueLogic Digital (OPC) Pvt. Ltd. All Rights Reserved.</p>
-  </footer>
-
+  <footer><p>© 2025 BlueLogic Digital (OPC) Pvt. Ltd. All Rights Reserved.</p></footer>
   <script>
-    const cards = document.querySelectorAll('.service-card');
-
-    cards.forEach(card => {
-      card.addEventListener('click', event => {
-        event.stopPropagation();
-        cards.forEach(c => { if (c !== card) c.classList.remove('flipped'); });
-        card.classList.toggle('flipped');
-      });
-    });
-
-    document.body.addEventListener('click', () => {
-      cards.forEach(card => card.classList.remove('flipped'));
-    });
+    const navbar=document.getElementById('navbar');
+    window.addEventListener('scroll',()=>{if(window.scrollY>50){navbar.classList.add('scrolled');}else{navbar.classList.remove('scrolled');}});
+    const faders=document.querySelectorAll('.service-card, .about, .contact');
+    const appearOptions={threshold:0.2};
+    const appearOnScroll=new IntersectionObserver(function(entries,observer){entries.forEach(entry=>{if(!entry.isIntersecting)return;entry.target.classList.add('visible');observer.unobserve(entry.target);});},appearOptions);
+    faders.forEach(fader=>{appearOnScroll.observe(fader);});
   </script>
 </body>
 </html>
