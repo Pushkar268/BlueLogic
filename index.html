@@ -10,15 +10,15 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#060b14;
-      --bg-2:#0a1220;
-      --ink:#e9f0f7;
-      --muted:#93a3bd;
-      --brand:#3da5ff;
-      --brand-2:#3a6eff;
-      --card:#0b1626;
-      --stroke:rgba(255,255,255,0.08);
-      --shadow:0 24px 60px rgba(0,0,0,0.35);
+      --bg:#f3f7fb;
+      --bg-2:#eef3f8;
+      --ink:#0a1a2b;
+      --muted:#5c6f86;
+      --brand:#1b6ef3;
+      --brand-2:#4ea1ff;
+      --card:#ffffff;
+      --stroke:rgba(10,26,43,0.08);
+      --shadow:0 24px 60px rgba(10,26,43,0.12);
     }
     *{box-sizing:border-box;margin:0;padding:0;}
     html,body{height:100%;}
@@ -26,8 +26,8 @@
       font-family:"IBM Plex Sans",system-ui,Arial;
       color:var(--ink);
       background:
-        radial-gradient(900px 520px at 85% -10%, rgba(61,165,255,0.14), transparent 60%),
-        radial-gradient(900px 520px at 0% 0%, rgba(58,110,255,0.2), transparent 60%),
+        radial-gradient(900px 520px at 85% -10%, rgba(78,161,255,0.2), transparent 60%),
+        radial-gradient(900px 520px at 0% 0%, rgba(27,110,243,0.18), transparent 60%),
         linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
       line-height:1.6;
     }
@@ -40,17 +40,17 @@
     header{
       position:sticky;top:0;z-index:50;
       backdrop-filter:blur(12px);
-      background:rgba(6,11,20,0.78);
+      background:rgba(243,247,251,0.88);
       border-bottom:1px solid var(--stroke);
     }
     .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
     .logo{display:flex;align-items:center;gap:12px;}
-    .logo img{width:44px;height:44px;border-radius:10px;box-shadow:0 0 0 1px var(--stroke),0 10px 30px rgba(61,165,255,0.18);}
+    .logo img{width:44px;height:44px;border-radius:10px;box-shadow:0 0 0 1px var(--stroke),0 10px 30px rgba(27,110,243,0.18);}
     .logo-title{font-family:"Space Grotesk",system-ui,Arial;font-weight:700;letter-spacing:0.3px;}
     .logo-sub{font-size:12px;color:var(--muted);margin-top:2px;}
     nav{display:flex;gap:18px;align-items:center;}
     nav a{color:var(--muted);font-weight:600;font-size:14px;padding:8px 12px;border-radius:999px;transition:all .25s ease;}
-    nav a:hover{color:var(--ink);background:rgba(61,165,255,0.12);}
+    nav a:hover{color:var(--ink);background:rgba(27,110,243,0.12);}
 
     .nav-cta{display:flex;gap:12px;align-items:center;}
     .btn{
@@ -58,14 +58,14 @@
       padding:12px 20px;border-radius:999px;font-weight:600;border:1px solid transparent;
       transition:all .25s ease;
     }
-    .btn.primary{background:linear-gradient(120deg,var(--brand),var(--brand-2));color:#07101a;box-shadow:0 14px 32px rgba(61,165,255,0.25);}    
-    .btn.primary:hover{transform:translateY(-2px);box-shadow:0 18px 36px rgba(61,165,255,0.35);}    
+    .btn.primary{background:linear-gradient(120deg,var(--brand),var(--brand-2));color:#ffffff;box-shadow:0 14px 32px rgba(27,110,243,0.22);}    
+    .btn.primary:hover{transform:translateY(-2px);box-shadow:0 18px 36px rgba(27,110,243,0.28);}    
     .btn.ghost{border-color:var(--stroke);color:var(--ink);}
-    .btn.ghost:hover{border-color:rgba(61,165,255,0.45);color:var(--brand);}
+    .btn.ghost:hover{border-color:rgba(27,110,243,0.45);color:var(--brand);}
 
     .hamburger{display:none;background:transparent;border:1px solid var(--stroke);color:var(--ink);width:42px;height:42px;border-radius:12px;font-size:20px;}
     @media(max-width:900px){
-      nav{display:none;position:absolute;right:24px;top:72px;flex-direction:column;background:rgba(6,11,20,0.95);border:1px solid var(--stroke);padding:16px;border-radius:16px;min-width:220px;box-shadow:var(--shadow);}
+      nav{display:none;position:absolute;right:24px;top:72px;flex-direction:column;background:#ffffff;border:1px solid var(--stroke);padding:16px;border-radius:16px;min-width:220px;box-shadow:var(--shadow);}
       nav.show{display:flex;}
       .hamburger{display:inline-flex;align-items:center;justify-content:center;}
       .nav-cta{display:none;}
@@ -85,7 +85,7 @@
     }
     .hero-panel:before{
       content:"";position:absolute;inset:-20% 60% auto auto;width:200px;height:200px;border-radius:50%;
-      background:radial-gradient(circle,rgba(61,165,255,0.4),transparent 70%);
+      background:radial-gradient(circle,rgba(27,110,243,0.35),transparent 70%);
       opacity:0.7;
     }
     .hero-panel h3{font-family:"Space Grotesk",system-ui,Arial;font-size:20px;margin-bottom:10px;}
@@ -94,6 +94,11 @@
     .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(120deg,var(--brand),var(--brand-2));margin-top:6px;flex-shrink:0;}
 
     .section{padding:64px 0;}
+    .section.alt{
+      background:linear-gradient(180deg,#f7f9fc 0%, #eef3f8 100%);
+      border-top:1px solid var(--stroke);
+      border-bottom:1px solid var(--stroke);
+    }
     .section-title{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:26px;}
     .section-title h2{font-family:"Space Grotesk",system-ui,Arial;font-size:28px;}
     .section-title p{color:var(--muted);max-width:560px;}
@@ -108,8 +113,8 @@
       transition:transform .3s ease, box-shadow .3s ease, border .3s ease;
       min-height:190px;
     }
-    .card:hover{transform:translateY(-6px);border-color:rgba(61,165,255,0.35);box-shadow:0 18px 40px rgba(0,0,0,0.35);}    
-    .card img{width:50px;height:50px;margin-bottom:14px;filter:drop-shadow(0 10px 20px rgba(61,165,255,0.3));}
+    .card:hover{transform:translateY(-6px);border-color:rgba(27,110,243,0.35);box-shadow:0 18px 40px rgba(10,26,43,0.18);}    
+    .card img{width:54px;height:54px;margin-bottom:12px;padding:10px;border-radius:14px;background:#f1f5fb;filter:drop-shadow(0 10px 20px rgba(27,110,243,0.2));}
     .card h3{font-size:18px;margin-bottom:8px;}
     .card p{color:var(--muted);font-size:14px;}
 
@@ -123,8 +128,8 @@
     .process .card{min-height:auto;}
 
     .cta{
-      background:linear-gradient(120deg,rgba(61,165,255,0.12),rgba(58,110,255,0.18));
-      border:1px solid rgba(61,165,255,0.35);
+      background:linear-gradient(120deg,rgba(27,110,243,0.12),rgba(78,161,255,0.18));
+      border:1px solid rgba(27,110,243,0.25);
       border-radius:26px;
       padding:32px;
       display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
@@ -133,6 +138,59 @@
 
     .contact-card{background:var(--card);border:1px solid var(--stroke);border-radius:22px;padding:26px;display:grid;gap:12px;}
     .contact-card a{color:var(--brand);}
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(27,110,243,0.08);
+      color:var(--brand);
+      font-size:11px;
+      font-weight:600;
+      border:1px solid rgba(27,110,243,0.18);
+      margin-bottom:10px;
+      width:max-content;
+    }
+
+    .enquiry-form{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:16px;
+      background:var(--card);
+      border:1px solid var(--stroke);
+      border-radius:22px;
+      padding:26px;
+      box-shadow:var(--shadow);
+    }
+
+    .card{cursor:pointer;}
+    .service-detail{
+      display:none;
+      margin-top:12px;
+      padding-top:12px;
+      border-top:1px dashed var(--stroke);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .card.open .service-detail{display:block;}
+    .field{display:flex;flex-direction:column;gap:8px;}
+    .field.full{grid-column:1 / -1;}
+    .field label{font-size:12px;font-weight:600;color:var(--muted);}
+    .field input,.field select,.field textarea{
+      border:1px solid var(--stroke);
+      border-radius:12px;
+      padding:12px 14px;
+      font-family:inherit;
+      font-size:14px;
+      background:#ffffff;
+      color:var(--ink);
+    }
+    .field input:focus,.field select:focus,.field textarea:focus{
+      outline:none;
+      border-color:rgba(27,110,243,0.45);
+      box-shadow:0 0 0 3px rgba(27,110,243,0.12);
+    }
 
     footer{
       border-top:1px solid var(--stroke);
@@ -151,6 +209,7 @@
       h1{font-size:30px;}
       .section{padding:52px 0;}
       .cta{padding:24px;}
+      .enquiry-form{grid-template-columns:1fr;}
     }
   </style>
 </head>
@@ -234,7 +293,7 @@
       </div>
     </section>
 
-    <section class="section" id="services">
+    <section class="section alt" id="services">
       <div class="container">
         <div class="section-title reveal">
           <div>
@@ -243,15 +302,16 @@
           </div>
         </div>
         <div class="grid services">
-          <div class="card reveal"><img src="https://cdn-icons-png.flaticon.com/512/4149/4149652.png" alt=""><h3>Cloud Computing</h3><p>Design, migrate and manage secure cloud infrastructure.</p></div>
-          <div class="card reveal"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt=""><h3>Cybersecurity</h3><p>Endpoint protection, firewalls and security assessments.</p></div>
-          <div class="card reveal"><img src="https://cdn-icons-png.flaticon.com/512/2910/2910768.png" alt=""><h3>Surveillance</h3><p>CCTV, IP camera systems and remote monitoring.</p></div>
-          <div class="card reveal"><img src="https://cdn-icons-png.flaticon.com/512/732/732221.png" alt=""><h3>Microsoft Apps</h3><p>Office365, SharePoint, Dynamics and Azure solutions for enterprises.</p></div>
-          <div class="card reveal"><img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt=""><h3>PC &amp; Gaming Setup</h3><p>Custom builds, optimizations and peripheral setup.</p></div>
-          <div class="card reveal"><img src="https://cdn-icons-png.flaticon.com/512/942/942751.png" alt=""><h3>Data Recovery</h3><p>Professional recovery from HDD, SSD and RAID systems.</p></div>
-          <div class="card reveal"><img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt=""><h3>Networking</h3><p>Enterprise-grade routers, switches and broadband solutions.</p></div>
-          <div class="card reveal"><img src="https://cdn-icons-png.flaticon.com/512/1006/1006771.png" alt=""><h3>Web Hosting</h3><p>Domain, SSL, managed hosting and maintenance.</p></div>
-          <div class="card reveal"><img src="https://cdn-icons-png.flaticon.com/512/1006/1006775.png" alt=""><h3>Digital Signatures</h3><p>Class 3 DSCs and secure document authentication services.</p></div>
+          <div class="card reveal"><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/cloud.svg" alt="Cloud infrastructure icon"><span class="badge">Cloud</span><h3>Cloud &amp; Infrastructure</h3><p>Design, migrate, and optimize cloud environments for secure scale.</p><div class="service-detail">Includes readiness assessment, migration planning, backup strategy, access control, and performance tuning.</div></div>
+          <div class="card reveal"><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/shield-lock.svg" alt="Security and compliance icon"><span class="badge">Security</span><h3>Security &amp; Compliance</h3><p>Endpoint protection, firewall strategy, and risk assessments.</p><div class="service-detail">Policy alignment, vulnerability checks, and remediation guidance for audit‑ready posture.</div></div>
+          <div class="card reveal"><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/camera-video.svg" alt="Surveillance camera icon"><span class="badge">Monitoring</span><h3>Smart Surveillance</h3><p>CCTV and IP camera systems with remote monitoring support.</p><div class="service-detail">Site survey, camera placement, remote access setup, and system health checks.</div></div>
+          <div class="card reveal"><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/grid-1x2.svg" alt="Productivity suite icon"><span class="badge">Productivity</span><h3>Microsoft Cloud</h3><p>Office 365, SharePoint, Dynamics, and Azure implementation.</p><div class="service-detail">Tenant setup, identity management, Teams/SharePoint configuration, and security baselines.</div></div>
+          <div class="card reveal"><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/pc-display.svg" alt="Workstation build icon"><span class="badge">Hardware</span><h3>Workstations &amp; Builds</h3><p>Custom PCs, performance tuning, and peripheral setup.</p><div class="service-detail">Component selection, OS installation, driver setup, and benchmarking for reliability.</div></div>
+          <div class="card reveal"><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/hdd.svg" alt="Data recovery icon"><span class="badge">Recovery</span><h3>Data Recovery</h3><p>Professional recovery for HDD, SSD, and RAID systems.</p><div class="service-detail">Diagnostics, clone-first recovery workflow, and secure handling of sensitive data.</div></div>
+          <div class="card reveal"><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/diagram-3.svg" alt="Networking icon"><span class="badge">Connectivity</span><h3>Network Engineering</h3><p>Enterprise routing, switching, and secure connectivity.</p><div class="service-detail">LAN/WAN design, secure Wi‑Fi planning, and bandwidth management.</div></div>
+          <div class="card reveal"><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/server.svg" alt="Web hosting icon"><span class="badge">Hosting</span><h3>Hosting &amp; Domains</h3><p>Managed hosting, SSL, and ongoing maintenance.</p><div class="service-detail">Domain setup, SSL provisioning, performance monitoring, and routine updates.</div></div>
+          <div class="card reveal"><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/code-slash.svg" alt="Application development icon"><span class="badge">Software</span><h3>Application Development</h3><p>Custom web and mobile apps built for performance and scale.</p><div class="service-detail">Product discovery, UI/UX design, full‑stack development, and ongoing maintenance.</div></div>
+          <div class="card reveal"><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/pen.svg" alt="Digital signature icon"><span class="badge">Identity</span><h3>Digital Signatures</h3><p>Class 3 DSC issuance and secure document authentication.</p><div class="service-detail">Issuance, renewal support, and usage guidance for compliance workflows.</div></div>
         </div>
       </div>
     </section>
@@ -263,8 +323,54 @@
             <h3>Ready to modernize your IT stack?</h3>
             <p class="muted">Let us design, secure, and manage the systems your business depends on.</p>
           </div>
-          <a class="btn primary" href="#contact">Schedule a Call</a>
+          <a class="btn primary" href="#enquiry">Schedule a Call</a>
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="enquiry">
+      <div class="container">
+        <div class="section-title reveal">
+          <div>
+            <h2>Enquiry Form</h2>
+            <p>Tell us about your requirements and we will get back within one business day.</p>
+          </div>
+        </div>
+        <form class="enquiry-form reveal" action="mailto:info@bluelogicdigital.in" method="post" enctype="text/plain">
+          <div class="field">
+            <label for="name">Full Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="email">Work Email</label>
+            <input id="email" name="email" type="email" placeholder="you@company.com" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+          <div class="field">
+            <label for="service">Service Interest</label>
+            <select id="service" name="service">
+              <option>Cloud &amp; Infrastructure</option>
+              <option>Security &amp; Compliance</option>
+              <option>Smart Surveillance</option>
+              <option>Microsoft Cloud</option>
+              <option>Workstations &amp; Builds</option>
+              <option>Data Recovery</option>
+              <option>Network Engineering</option>
+              <option>Hosting &amp; Domains</option>
+              <option>Digital Signatures</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="message">Project Details</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us about your requirements"></textarea>
+          </div>
+          <div class="field full">
+            <button class="btn primary" type="submit">Submit Enquiry</button>
+          </div>
+        </form>
       </div>
     </section>
 
@@ -306,6 +412,16 @@
       });
     }, {threshold:0.15});
     reveals.forEach(el=>io.observe(el));
+
+    const serviceCards = document.querySelectorAll('.services .card');
+    serviceCards.forEach(card=>{
+      card.addEventListener('click', ()=>{
+        serviceCards.forEach(other=>{
+          if(other !== card) other.classList.remove('open');
+        });
+        card.classList.toggle('open');
+      });
+    });
   </script>
 </body>
 </html>
