@@ -91,7 +91,47 @@
   font-size:.82rem; color:var(--ink-2); font-family:var(--font-mono); letter-spacing:.02em;
 }
 
+/* ---------------- Ecosystem (positioning visual) ---------------- */
+.ecosystem{ margin-top:var(--sp-7); }
+.ecosystem-inner{
+  display:grid; grid-template-columns:.85fr 1.15fr; gap:var(--sp-7);
+  align-items:center;
+}
+.ecosystem-copy h2{ font-size:var(--fs-h2); margin:16px 0 16px; }
+.ecosystem-diagram{ width:100%; }
+.ecosystem-diagram svg{ width:100%; height:auto; }
+.ecosystem-hub text{ user-select:none; }
+
 /* ---------------- Capabilities ---------------- */
+.capability-layout{ display:grid; grid-template-columns:200px 1fr; gap:var(--sp-6); align-items:start; }
+
+.capability-rail{
+  position:sticky; top:110px;
+  display:flex; flex-direction:column; gap:2px;
+}
+.capability-rail a{
+  display:flex; flex-direction:column; gap:4px;
+  padding:12px 0 12px 16px;
+  border-left:2px solid var(--surface-line);
+  color:var(--ink-3);
+  transition:color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+.rail-num{ font-family:var(--font-mono); font-size:11px; }
+.rail-label{ font-size:.82rem; font-weight:500; }
+.capability-rail a:hover{ color:var(--ink-1); }
+.capability-rail a.is-active{ color:var(--ink-0); border-left-color:var(--signal-0); }
+.capability-rail a.is-active .rail-num{ color:var(--signal-0); }
+
+.capability-groups{ display:grid; gap:var(--sp-7); }
+.capability-group{ scroll-margin-top:100px; }
+.group-head{
+  display:grid; grid-template-columns:auto 1fr; gap:18px;
+  align-items:baseline; margin-bottom:22px;
+}
+.group-num{ font-family:var(--font-mono); font-size:.85rem; color:var(--signal-0); }
+.group-title{ font-size:clamp(1.4rem, .8vw + 1.15rem, 1.9rem); margin-bottom:6px; }
+.group-desc{ font-size:.92rem; max-width:520px; }
+
 .capability-list{ border-top:1px solid var(--surface-line); }
 .capability-row{ border-bottom:1px solid var(--surface-line); }
 .capability-trigger{
@@ -246,8 +286,33 @@
 /* ============================== RESPONSIVE ============================== */
 @media(max-width:980px){
   .tech-grid, .why-grid, .contact-grid{ grid-template-columns:1fr; gap:var(--sp-5); }
+  .ecosystem-inner{ grid-template-columns:1fr; gap:var(--sp-5); }
+  .ecosystem-diagram{ max-width:440px; margin-inline:auto; }
   .hero-stats-grid{ grid-template-columns:1fr; gap:16px; }
   .hero-stat + .hero-stat{ border-left:none; padding-left:0; border-top:1px solid var(--surface-line); padding-top:16px; }
+
+  /* Capability rail: sticky sidebar doesn't work in a single column —
+     becomes a horizontal scrollable strip instead. */
+  .capability-layout{ grid-template-columns:1fr; gap:var(--sp-5); }
+  .capability-rail{
+    position:static;
+    flex-direction:row;
+    gap:8px;
+    overflow-x:auto;
+    padding-bottom:4px;
+    -webkit-overflow-scrolling:touch;
+  }
+  .capability-rail a{
+    flex:0 0 auto;
+    flex-direction:row;
+    align-items:center;
+    gap:8px;
+    padding:10px 16px;
+    border-left:none;
+    border-bottom:2px solid var(--surface-line);
+    white-space:nowrap;
+  }
+  .capability-rail a.is-active{ border-bottom-color:var(--signal-0); }
 }
 
 @media(max-width:900px){

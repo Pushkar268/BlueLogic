@@ -1,0 +1,95 @@
+/**
+ * Signature "connected ecosystem" diagram: BlueLogic hub with spokes out to
+ * the systems it manages as one team instead of eight separate vendors.
+ * Built with SVG + GSAP — no WebGL, this doesn't need it.
+ */
+(function () {
+  const svg = document.getElementById('ecosystemSvg');
+  if (!svg) return;
+
+  const NODES = [
+    { label: 'Cloud', angle: -90 },
+    { label: 'Security', angle: -45 },
+    { label: 'Network', angle: 0 },
+    { label: 'Microsoft', angle: 45 },
+    { label: 'Continuity', angle: 90 },
+    { label: 'Data', angle: 135 },
+    { label: 'Software', angle: 180 },
+    { label: 'Devices', angle: -135 },
+  ];
+
+  const CENTER = 300;
+  const RADIUS = 220;
+  const NODE_R = 34;
+  const ns = 'http://www.w3.org/2000/svg';
+
+  const spokesGroup = document.getElementById('ecosystemSpokes');
+  const nodesGroup = document.getElementById('ecosystemNodes');
+
+  function point(angleDeg, radius) {
+    const rad = (angleDeg * Math.PI) / 180;
+    return { x: CENTER + radius * Math.cos(rad), y: CENTER + radius * Math.sin(rad) };
+  }
+
+  NODES.forEach((node, i) => {
+    const p = point(node.angle, RADIUS);
+    const hubEdge = point(node.angle, 54);
+    const nodeEdge = point(node.angle, RADIUS - NODE_R);
+
+    const line = document.createElementNS(ns, 'line');
+    line.setAttribute('x1', hubEdge.x);
+    line.setAttribute('y1', hubEdge.y);
+    line.setAttribute('x2', nodeEdge.x);
+    line.setAttribute('y2', nodeEdge.y);
+    line.setAttribute('data-spoke', i);
+    spokesGroup.appendChild(line);
+
+    const circle = document.createElementNS(ns, 'circle');
+    circle.setAttribute('cx', p.x);
+    circle.setAttribute('cy', p.y);
+    circle.setAttribute('r', NODE_R);
+    circle.setAttribute('fill', 'var(--surface-1)');
+    circle.setAttribute('stroke', 'var(--surface-line-strong)');
+    circle.setAttribute('stroke-width', '1.2');
+    circle.setAttribute('data-node', i);
+    nodesGroup.appendChild(circle);
+
+    const text = document.createElementNS(ns, 'text');
+    text.setAttribute('x', p.x);
+    text.setAttribute('y', p.y + (p.y >= CENTER ? NODE_R + 22 : -(NODE_R + 14)));
+    text.setAttribute('text-anchor', 'middle');
+    text.setAttribute('font-size', '13');
+    text.setAttribute('letter-spacing', '0.04em');
+    text.setAttribute('fill', 'var(--ink-1)');
+    text.setAttribute('data-node-label', i);
+    text.textContent = node.label.toUpperCase();
+    nodesGroup.appendChild(text);
+  });
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (prefersReduced || !window.gsap || !window.ScrollTrigger) {
+    // Static, fully visible — no draw-in animation needed to convey the diagram.
+    return;
+  }
+  gsap.registerPlugin(ScrollTrigger);
+
+  const lines = spokesGroup.querySelectorAll('line');
+  const circles = nodesGroup.querySelectorAll('circle');
+  const labels = nodesGroup.querySelectorAll('text');
+
+  lines.forEach((line) => {
+    const len = line.getTotalLength();
+    line.style.strokeDasharray = len;
+    line.style.strokeDashoffset = len;
+  });
+  gsap.set(circles, { scale: 0, transformOrigin: '50% 50%' });
+  gsap.set(labels, { opacity: 0 });
+
+  gsap.timeline({
+    scrollTrigger: { trigger: svg, start: 'top 75%', once: true },
+  })
+    .to(lines, { strokeDashoffset: 0, duration: 0.7, stagger: 0.07, ease: 'power2.out' })
+    .to(circles, { scale: 1, duration: 0.5, stagger: 0.07, ease: 'back.out(2)' }, '-=0.5')
+    .to(labels, { opacity: 1, duration: 0.4, stagger: 0.07 }, '-=0.45');
+})();

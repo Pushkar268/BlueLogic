@@ -82,13 +82,94 @@
     });
   }
 
-  /* ---------------- Enquiry form status ---------------- */
+  /* ---------------- Enquiry form: validation + loading/success/error states ----
+     The only real "backend" here is a mailto: submission — there is no server
+     to confirm delivery, so the success state honestly says "opening your
+     email client" rather than claiming the message was sent. ---------------- */
   const form = document.getElementById('enquiryForm');
   const status = document.getElementById('formStatus');
-  if (form) {
-    form.addEventListener('submit', () => {
-      status.textContent = 'Opening your email client to send this enquiry…';
-      status.classList.add('is-success');
+  const submitBtn = document.getElementById('enquirySubmit');
+
+  function setFieldError(field, message) {
+    const wrapper = field.closest('.field');
+    const errorEl = document.getElementById(field.getAttribute('aria-describedby'));
+    if (wrapper) wrapper.classList.toggle('has-error', Boolean(message));
+    if (errorEl) errorEl.textContent = message || '';
+  }
+
+  function validateEnquiryForm() {
+    let valid = true;
+    let firstInvalid = null;
+
+    const name = form.elements.name;
+    if (!name.value.trim()) {
+      setFieldError(name, 'Please enter your name.');
+      valid = false;
+      firstInvalid = firstInvalid || name;
+    } else {
+      setFieldError(name, '');
+    }
+
+    const email = form.elements.email;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email.value.trim()) {
+      setFieldError(email, 'Please enter your work email.');
+      valid = false;
+      firstInvalid = firstInvalid || email;
+    } else if (!emailPattern.test(email.value.trim())) {
+      setFieldError(email, 'Enter a valid email address.');
+      valid = false;
+      firstInvalid = firstInvalid || email;
+    } else {
+      setFieldError(email, '');
+    }
+
+    const phone = form.elements.phone;
+    const digits = phone.value.replace(/\D/g, '');
+    if (!phone.value.trim()) {
+      setFieldError(phone, 'Please enter your phone number.');
+      valid = false;
+      firstInvalid = firstInvalid || phone;
+    } else if (digits.length < 7) {
+      setFieldError(phone, 'Enter a valid phone number.');
+      valid = false;
+      firstInvalid = firstInvalid || phone;
+    } else {
+      setFieldError(phone, '');
+    }
+
+    return { valid, firstInvalid };
+  }
+
+  if (form && submitBtn) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const { valid, firstInvalid } = validateEnquiryForm();
+
+      if (!valid) {
+        status.classList.remove('is-success');
+        status.classList.add('is-error');
+        status.textContent = 'Please fix the highlighted fields before submitting.';
+        if (firstInvalid) firstInvalid.focus();
+        return;
+      }
+
+      status.classList.remove('is-error');
+      submitBtn.classList.add('is-loading');
+      submitBtn.disabled = true;
+      status.textContent = 'Preparing your enquiry…';
+
+      window.setTimeout(() => {
+        submitBtn.classList.remove('is-loading');
+        submitBtn.disabled = false;
+        status.classList.add('is-success');
+        status.textContent = 'Opening your email client — send the message there to complete your enquiry.';
+        form.submit();
+      }, 450);
+    });
+
+    form.querySelectorAll('[required]').forEach((field) => {
+      field.addEventListener('input', () => setFieldError(field, ''));
     });
   }
 
@@ -171,6 +252,25 @@
         navLinks.forEach((a) => a.removeAttribute('aria-current'));
         const match = document.querySelector(`.primary-nav a[href="#${sec.id}"]`);
         if (match) match.setAttribute('aria-current', 'page');
+      },
+    });
+  });
+
+  /* ---- Capability rail active state on scroll ---- */
+  const railLinks = document.querySelectorAll('.capability-rail a');
+  const railGroups = Array.from(railLinks)
+    .map((a) => document.querySelector(a.getAttribute('href')))
+    .filter(Boolean);
+  railGroups.forEach((group) => {
+    ScrollTrigger.create({
+      trigger: group,
+      start: 'top 55%',
+      end: 'bottom 55%',
+      onToggle: (self) => {
+        if (!self.isActive) return;
+        railLinks.forEach((a) => a.classList.remove('is-active'));
+        const match = document.querySelector(`.capability-rail a[href="#${group.id}"]`);
+        if (match) match.classList.add('is-active');
       },
     });
   });
