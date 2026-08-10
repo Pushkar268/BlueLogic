@@ -3,351 +3,577 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>BlueLogic Digital (OPC) Pvt. Ltd</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <title>BlueLogic Digital — Engineering Resilient IT Systems</title>
+  <meta name="description" content="BlueLogic Digital (OPC) Pvt. Ltd engineers secure cloud, network, and infrastructure systems for businesses — cloud & infrastructure, security & compliance, Microsoft cloud, surveillance, data recovery, and more." />
+  <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico" />
+  <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#f3f7fb;
-      --bg-2:#eef3f8;
-      --ink:#0a1a2b;
-      --muted:#5c6f86;
-      --brand:#1b6ef3;
-      --brand-2:#4ea1ff;
-      --card:#ffffff;
-      --stroke:rgba(10,26,43,0.08);
-      --shadow:0 24px 60px rgba(10,26,43,0.12);
-    }
-    *{box-sizing:border-box;margin:0;padding:0;}
-    html,body{height:100%;}
-    body{
-      font-family:"IBM Plex Sans",system-ui,Arial;
-      color:var(--ink);
-      background:
-        radial-gradient(900px 520px at 85% -10%, rgba(78,161,255,0.2), transparent 60%),
-        radial-gradient(900px 520px at 0% 0%, rgba(27,110,243,0.18), transparent 60%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
-      line-height:1.6;
-    }
-    a{color:inherit;text-decoration:none;}
-    img{max-width:100%;display:block;}
-    .muted{color:var(--muted);}
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
-    .container{max-width:1180px;margin:0 auto;padding:0 24px;}
-
-    header{
-      position:sticky;top:0;z-index:50;
-      backdrop-filter:blur(12px);
-      background:rgba(243,247,251,0.88);
-      border-bottom:1px solid var(--stroke);
-    }
-    .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
-    .logo{display:flex;align-items:center;gap:12px;}
-    .logo img{width:44px;height:44px;border-radius:10px;box-shadow:0 0 0 1px var(--stroke),0 10px 30px rgba(27,110,243,0.18);}
-    .logo-title{font-family:"Space Grotesk",system-ui,Arial;font-weight:700;letter-spacing:0.3px;}
-    .logo-sub{font-size:12px;color:var(--muted);margin-top:2px;}
-    nav{display:flex;gap:18px;align-items:center;}
-    nav a{color:var(--muted);font-weight:600;font-size:14px;padding:8px 12px;border-radius:999px;transition:all .25s ease;}
-    nav a:hover{color:var(--ink);background:rgba(27,110,243,0.12);}
-
-    .nav-cta{display:flex;gap:12px;align-items:center;}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:8px;
-      padding:12px 20px;border-radius:999px;font-weight:600;border:1px solid transparent;
-      transition:all .25s ease;
-    }
-    .btn.primary{background:linear-gradient(120deg,var(--brand),var(--brand-2));color:#ffffff;box-shadow:0 14px 32px rgba(27,110,243,0.22);}    
-    .btn.primary:hover{transform:translateY(-2px);box-shadow:0 18px 36px rgba(27,110,243,0.28);}    
-    .btn.ghost{border-color:var(--stroke);color:var(--ink);}
-    .btn.ghost:hover{border-color:rgba(27,110,243,0.45);color:var(--brand);}
-
-    .hamburger{display:none;background:transparent;border:1px solid var(--stroke);color:var(--ink);width:42px;height:42px;border-radius:12px;font-size:20px;}
-    @media(max-width:900px){
-      nav{display:none;position:absolute;right:24px;top:72px;flex-direction:column;background:#ffffff;border:1px solid var(--stroke);padding:16px;border-radius:16px;min-width:220px;box-shadow:var(--shadow);}
-      nav.show{display:flex;}
-      .hamburger{display:inline-flex;align-items:center;justify-content:center;}
-      .nav-cta{display:none;}
-    }
-
-    .hero{padding:88px 0 72px;}
-    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;}
-    .eyebrow{font-size:12px;color:var(--brand);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
-    h1{font-family:"Space Grotesk",system-ui,Arial;font-weight:700;font-size:44px;line-height:1.1;margin-bottom:18px;}
-    .hero p{color:var(--muted);font-size:16px;max-width:560px;margin-bottom:28px;}
-    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
-
-    .hero-panel{
-      background:linear-gradient(160deg,rgba(255,255,255,0.06),rgba(255,255,255,0.01));
-      border:1px solid var(--stroke);
-      border-radius:24px;padding:28px;box-shadow:var(--shadow);position:relative;overflow:hidden;
-    }
-    .hero-panel:before{
-      content:"";position:absolute;inset:-20% 60% auto auto;width:200px;height:200px;border-radius:50%;
-      background:radial-gradient(circle,rgba(27,110,243,0.35),transparent 70%);
-      opacity:0.7;
-    }
-    .hero-panel h3{font-family:"Space Grotesk",system-ui,Arial;font-size:20px;margin-bottom:10px;}
-    .hero-panel ul{list-style:none;display:grid;gap:12px;margin-top:18px;}
-    .hero-panel li{display:flex;gap:10px;align-items:flex-start;color:var(--muted);font-size:14px;}
-    .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(120deg,var(--brand),var(--brand-2));margin-top:6px;flex-shrink:0;}
-
-    .section{padding:64px 0;}
-    .section.alt{
-      background:linear-gradient(180deg,#f7f9fc 0%, #eef3f8 100%);
-      border-top:1px solid var(--stroke);
-      border-bottom:1px solid var(--stroke);
-    }
-    .section-title{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:26px;}
-    .section-title h2{font-family:"Space Grotesk",system-ui,Arial;font-size:28px;}
-    .section-title p{color:var(--muted);max-width:560px;}
-
-    .grid{display:grid;gap:20px;}
-    .grid.services{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
-    .card{
-      background:var(--card);
-      border:1px solid var(--stroke);
-      border-radius:20px;
-      padding:20px;
-      transition:transform .3s ease, box-shadow .3s ease, border .3s ease;
-      min-height:190px;
-    }
-    .card:hover{transform:translateY(-6px);border-color:rgba(27,110,243,0.35);box-shadow:0 18px 40px rgba(10,26,43,0.18);}    
-    .card img{width:54px;height:54px;margin-bottom:12px;padding:10px;border-radius:14px;background:#f1f5fb;filter:drop-shadow(0 10px 20px rgba(27,110,243,0.2));}
-    .card h3{font-size:18px;margin-bottom:8px;}
-    .card p{color:var(--muted);font-size:14px;}
-
-    .about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
-    .about-panel{background:var(--card);border:1px solid var(--stroke);border-radius:22px;padding:26px;}
-    .about-panel h3{font-family:"Space Grotesk",system-ui,Arial;margin-bottom:12px;}
-    .pill-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
-    .pill{padding:8px 12px;border-radius:999px;border:1px solid var(--stroke);font-size:12px;color:var(--muted);}
-
-    .process{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;}
-    .process .card{min-height:auto;}
-
-    .cta{
-      background:linear-gradient(120deg,rgba(27,110,243,0.12),rgba(78,161,255,0.18));
-      border:1px solid rgba(27,110,243,0.25);
-      border-radius:26px;
-      padding:32px;
-      display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
-    }
-    .cta h3{font-family:"Space Grotesk",system-ui,Arial;font-size:26px;}
-
-    .contact-card{background:var(--card);border:1px solid var(--stroke);border-radius:22px;padding:26px;display:grid;gap:12px;}
-    .contact-card a{color:var(--brand);}
-
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      padding:6px 10px;
-      border-radius:999px;
-      background:rgba(27,110,243,0.08);
-      color:var(--brand);
-      font-size:11px;
-      font-weight:600;
-      border:1px solid rgba(27,110,243,0.18);
-      margin-bottom:10px;
-      width:max-content;
-    }
-
-    .enquiry-form{
-      display:grid;
-      grid-template-columns:repeat(2, minmax(0,1fr));
-      gap:16px;
-      background:var(--card);
-      border:1px solid var(--stroke);
-      border-radius:22px;
-      padding:26px;
-      box-shadow:var(--shadow);
-    }
-
-    .card{cursor:pointer;}
-    .service-detail{
-      display:none;
-      margin-top:12px;
-      padding-top:12px;
-      border-top:1px dashed var(--stroke);
-      color:var(--muted);
-      font-size:13px;
-    }
-    .card.open .service-detail{display:block;}
-    .field{display:flex;flex-direction:column;gap:8px;}
-    .field.full{grid-column:1 / -1;}
-    .field label{font-size:12px;font-weight:600;color:var(--muted);}
-    .field input,.field select,.field textarea{
-      border:1px solid var(--stroke);
-      border-radius:12px;
-      padding:12px 14px;
-      font-family:inherit;
-      font-size:14px;
-      background:#ffffff;
-      color:var(--ink);
-    }
-    .field input:focus,.field select:focus,.field textarea:focus{
-      outline:none;
-      border-color:rgba(27,110,243,0.45);
-      box-shadow:0 0 0 3px rgba(27,110,243,0.12);
-    }
-
-    footer{
-      border-top:1px solid var(--stroke);
-      padding:22px 0;color:var(--muted);font-size:13px;text-align:center;
-    }
-
-    .reveal{opacity:0;transform:translateY(18px);transition:all .6s ease;}
-    .reveal.visible{opacity:1;transform:translateY(0);}
-
-    @media(max-width:980px){
-      .hero-grid{grid-template-columns:1fr;}
-      h1{font-size:36px;}
-      .about-wrap{grid-template-columns:1fr;}
-    }
-    @media(max-width:600px){
-      h1{font-size:30px;}
-      .section{padding:52px 0;}
-      .cta{padding:24px;}
-      .enquiry-form{grid-template-columns:1fr;}
-    }
-  </style>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/motion.css">
 </head>
 <body>
-  <header>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="siteHeader">
     <div class="container nav-wrap">
-      <div class="logo">
-        <img src="bluelogic-logo.png" alt="BlueLogic Digital">
-        <div>
-          <div class="logo-title">BlueLogic <span style="color:var(--brand)">Digital</span></div>
-          <div class="logo-sub">Empowering Businesses with Smart IT Solutions</div>
-        </div>
-      </div>
-      <nav id="mainNav">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
+      <a class="brand" href="#home" aria-label="BlueLogic Digital — home">
+        <img src="assets/images/bluelogic-logo-256.png" alt="" width="36" height="36" />
+        <span>
+          <span class="brand-word">Blue<span>Logic</span></span>
+          <span class="brand-sub">DIGITAL (OPC) PVT. LTD</span>
+        </span>
+      </a>
+
+      <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+        <a href="#capabilities">Capabilities</a>
+        <a href="#technology">Technology</a>
+        <a href="#process">Process</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
-      <div class="nav-cta">
-        <a class="btn ghost" href="#services">Explore Services</a>
-        <a class="btn primary" href="#contact">Get in Touch</a>
+
+      <div class="nav-actions">
+        <a class="btn primary" href="#enquiry" data-magnetic>
+          Start a Project
+          <svg class="btn-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 12L12 2M12 2H4M12 2V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <svg class="icon-burger" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M2 5h14M2 9h14M2 13h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <svg class="icon-close" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3 3l12 12M15 3L3 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
       </div>
-      <button class="hamburger" id="hamb">☰</button>
+    </div>
+
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <nav aria-label="Mobile">
+        <a href="#capabilities">Capabilities</a>
+        <a href="#technology">Technology</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="btn primary" href="#enquiry">Start a Project</a>
+      </nav>
     </div>
   </header>
 
-  <main>
+  <main id="main">
+
+    <!-- ================= 01 HERO ================= -->
     <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div class="reveal">
-          <div class="eyebrow">Modern Tech Partner</div>
-          <h1>BlueLogic Digital (OPC) Pvt. Ltd</h1>
-          <p>We provide enterprise IT services: Cloud, Cybersecurity, Microsoft apps, Networking, Data Recovery, Surveillance, PC/Gaming setups, Digital Signatures and more.</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#contact">Start a Project</a>
-            <a class="btn ghost" href="#services">View Capabilities</a>
-          </div>
-        </div>
-        <div class="hero-panel reveal">
-          <h3>Tech that scales with your business</h3>
-          <p class="muted">We focus on resilient infrastructure, secure systems, and practical outcomes so teams can move faster with confidence.</p>
-          <ul>
-            <li><span class="dot"></span>Strategic cloud and network design</li>
-            <li><span class="dot"></span>Security-first planning and deployment</li>
-            <li><span class="dot"></span>Managed services and rapid support</li>
-          </ul>
+      <canvas id="networkCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-grid-overlay" aria-hidden="true"></div>
+
+      <div class="container hero-inner">
+        <p class="eyebrow" data-hero-in>Enterprise IT &amp; Infrastructure Partner</p>
+        <h1 class="hero-title">
+          <span class="line"><span class="word">Engineering</span></span>
+          <span class="line"><span class="word">systems businesses</span></span>
+          <span class="line"><span class="word">can <em>depend</em> on.</span></span>
+        </h1>
+        <p class="hero-lead" data-hero-in>
+          BlueLogic Digital designs, secures, and manages the cloud, network, and infrastructure
+          systems modern businesses run on — from Microsoft 365 rollouts to enterprise networking,
+          surveillance, and disaster‑ready data recovery.
+        </p>
+        <div class="hero-actions" data-hero-in>
+          <a class="btn primary" href="#enquiry" data-magnetic>
+            Start a Project
+            <svg class="btn-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 12L12 2M12 2H4M12 2V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn ghost" href="#capabilities">
+            View Capabilities
+          </a>
         </div>
       </div>
-    </section>
 
-    <section class="section" id="about">
-      <div class="container about-wrap">
-        <div class="about-panel reveal">
-          <h3>About BlueLogic Digital</h3>
-          <p>BlueLogic Digital (OPC) Pvt. Ltd is a trusted IT partner for businesses, offering end-to-end solutions from infrastructure to managed services. We focus on reliability, security and business outcomes.</p>
-          <div class="pill-list">
-            <div class="pill">Secure Infrastructure</div>
-            <div class="pill">Modern Cloud</div>
-            <div class="pill">Managed Services</div>
-            <div class="pill">Business Continuity</div>
-          </div>
-        </div>
-        <div class="about-panel reveal">
-          <h3>How We Deliver</h3>
-          <div class="process">
-            <div class="card">
-              <h3>1. Assess</h3>
-              <p>Understand requirements, risks, and the right-fit architecture.</p>
-            </div>
-            <div class="card">
-              <h3>2. Implement</h3>
-              <p>Deploy secure, scalable systems with minimal disruption.</p>
-            </div>
-            <div class="card">
-              <h3>3. Support</h3>
-              <p>Ongoing monitoring, optimization, and fast response.</p>
-            </div>
-          </div>
+      <div class="hero-stats" data-hero-in>
+        <div class="container hero-stats-grid">
+          <div class="hero-stat"><span class="stat-num">10</span><span class="stat-label">Service Domains</span></div>
+          <div class="hero-stat"><span class="stat-num">1&nbsp;Day</span><span class="stat-label">Typical Response Window</span></div>
+          <div class="hero-stat"><span class="stat-num">IN</span><span class="stat-label">India‑Based Delivery</span></div>
         </div>
       </div>
+
+      <a class="scroll-cue" href="#intro" aria-label="Scroll to next section">
+        <span></span>
+      </a>
     </section>
 
-    <section class="section alt" id="services">
+    <!-- ================= 02 TRUST / INTRO ================= -->
+    <section class="section intro" id="intro">
       <div class="container">
-        <div class="section-title reveal">
-          <div>
-            <h2>Services Built for Modern Operations</h2>
-            <p>From core infrastructure to specialized services, we deliver dependable systems that keep teams productive and protected.</p>
-          </div>
-        </div>
-        <div class="grid services">
-          <div class="card reveal"><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/cloud.svg" alt="Cloud infrastructure icon"><span class="badge">Cloud</span><h3>Cloud &amp; Infrastructure</h3><p>Design, migrate, and optimize cloud environments for secure scale.</p><div class="service-detail">Includes readiness assessment, migration planning, backup strategy, access control, and performance tuning.</div></div>
-          <div class="card reveal"><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/shield-lock.svg" alt="Security and compliance icon"><span class="badge">Security</span><h3>Security &amp; Compliance</h3><p>Endpoint protection, firewall strategy, and risk assessments.</p><div class="service-detail">Policy alignment, vulnerability checks, and remediation guidance for audit‑ready posture.</div></div>
-          <div class="card reveal"><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/camera-video.svg" alt="Surveillance camera icon"><span class="badge">Monitoring</span><h3>Smart Surveillance</h3><p>CCTV and IP camera systems with remote monitoring support.</p><div class="service-detail">Site survey, camera placement, remote access setup, and system health checks.</div></div>
-          <div class="card reveal"><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/grid-1x2.svg" alt="Productivity suite icon"><span class="badge">Productivity</span><h3>Microsoft Cloud</h3><p>Office 365, SharePoint, Dynamics, and Azure implementation.</p><div class="service-detail">Tenant setup, identity management, Teams/SharePoint configuration, and security baselines.</div></div>
-          <div class="card reveal"><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/pc-display.svg" alt="Workstation build icon"><span class="badge">Hardware</span><h3>Workstations &amp; Builds</h3><p>Custom PCs, performance tuning, and peripheral setup.</p><div class="service-detail">Component selection, OS installation, driver setup, and benchmarking for reliability.</div></div>
-          <div class="card reveal"><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/hdd.svg" alt="Data recovery icon"><span class="badge">Recovery</span><h3>Data Recovery</h3><p>Professional recovery for HDD, SSD, and RAID systems.</p><div class="service-detail">Diagnostics, clone-first recovery workflow, and secure handling of sensitive data.</div></div>
-          <div class="card reveal"><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/diagram-3.svg" alt="Networking icon"><span class="badge">Connectivity</span><h3>Network Engineering</h3><p>Enterprise routing, switching, and secure connectivity.</p><div class="service-detail">LAN/WAN design, secure Wi‑Fi planning, and bandwidth management.</div></div>
-          <div class="card reveal"><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/server.svg" alt="Web hosting icon"><span class="badge">Hosting</span><h3>Hosting &amp; Domains</h3><p>Managed hosting, SSL, and ongoing maintenance.</p><div class="service-detail">Domain setup, SSL provisioning, performance monitoring, and routine updates.</div></div>
-          <div class="card reveal"><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/code-slash.svg" alt="Application development icon"><span class="badge">Software</span><h3>Application Development</h3><p>Custom web and mobile apps built for performance and scale.</p><div class="service-detail">Product discovery, UI/UX design, full‑stack development, and ongoing maintenance.</div></div>
-          <div class="card reveal"><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/pen.svg" alt="Digital signature icon"><span class="badge">Identity</span><h3>Digital Signatures</h3><p>Class 3 DSC issuance and secure document authentication.</p><div class="service-detail">Issuance, renewal support, and usage guidance for compliance workflows.</div></div>
+        <p class="section-num reveal-up">01 / Introduction</p>
+        <p class="intro-statement reveal-up">
+          Every business now runs on infrastructure it rarely thinks about — until it breaks.
+          <span class="muted">BlueLogic exists to make that infrastructure invisible: secure by
+          default, monitored continuously, and built by people who understand both the
+          engineering and the business behind it.</span>
+        </p>
+        <div class="pill-row reveal-up">
+          <span class="pill">Secure Infrastructure</span>
+          <span class="pill">Modern Cloud</span>
+          <span class="pill">Managed Services</span>
+          <span class="pill">Business Continuity</span>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <!-- ================= 03 CAPABILITIES ================= -->
+    <section class="section capabilities" id="capabilities">
       <div class="container">
-        <div class="cta reveal">
-          <div>
-            <h3>Ready to modernize your IT stack?</h3>
-            <p class="muted">Let us design, secure, and manage the systems your business depends on.</p>
+        <div class="section-head">
+          <p class="section-num reveal-up">02 / Capabilities</p>
+          <h2 class="reveal-up">Ten domains. <span class="muted">One accountable partner.</span></h2>
+          <p class="section-lead reveal-up muted">
+            From core infrastructure to specialized services — each capability is delivered
+            end‑to‑end, not handed off between vendors.
+          </p>
+        </div>
+
+        <ul class="capability-list" id="capabilityList">
+          <li class="capability-row" data-index="01">
+            <button class="capability-trigger" aria-expanded="false">
+              <span class="cap-index">01</span>
+              <span class="cap-title">Cloud &amp; Infrastructure</span>
+              <span class="cap-tag badge">Cloud</span>
+              <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="capability-body">
+              <div class="cap-detail">
+                <p><strong>What it is —</strong> Design, migration, and ongoing optimization of cloud and hybrid environments, built for secure, predictable scale rather than default configurations.</p>
+                <div class="cap-block">
+                  <span class="cap-subhead">Typical use cases</span>
+                  <ul>
+                    <li>Migrating on‑prem servers to the cloud</li>
+                    <li>Setting up backup and disaster recovery</li>
+                    <li>Scaling infrastructure for a growing team</li>
+                    <li>Consolidating multiple environments into one managed setup</li>
+                  </ul>
+                </div>
+                <div class="cap-block cap-pricing">
+                  <span class="cap-subhead">Pricing</span>
+                  <p>Scoped per engagement based on environment size and migration complexity. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="capability-row" data-index="02">
+            <button class="capability-trigger" aria-expanded="false">
+              <span class="cap-index">02</span>
+              <span class="cap-title">Security &amp; Compliance</span>
+              <span class="cap-tag badge">Security</span>
+              <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="capability-body">
+              <div class="cap-detail">
+                <p><strong>What it is —</strong> Endpoint protection, firewall strategy, and risk assessments that keep systems audit‑ready, with policy alignment and remediation guidance.</p>
+                <div class="cap-block">
+                  <span class="cap-subhead">Typical use cases</span>
+                  <ul>
+                    <li>Pre‑audit security reviews</li>
+                    <li>Rolling out endpoint protection across a device fleet</li>
+                    <li>Firewall and access‑policy hardening</li>
+                    <li>Incident‑readiness planning</li>
+                  </ul>
+                </div>
+                <div class="cap-block cap-pricing">
+                  <span class="cap-subhead">Pricing</span>
+                  <p>Scoped per engagement based on device count and compliance scope. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="capability-row" data-index="03">
+            <button class="capability-trigger" aria-expanded="false">
+              <span class="cap-index">03</span>
+              <span class="cap-title">Smart Surveillance</span>
+              <span class="cap-tag badge">Monitoring</span>
+              <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="capability-body">
+              <div class="cap-detail">
+                <p><strong>What it is —</strong> CCTV and IP camera systems with remote monitoring support, from site survey and placement through ongoing health checks.</p>
+                <div class="cap-block">
+                  <span class="cap-subhead">Typical use cases</span>
+                  <ul>
+                    <li>Office and warehouse security monitoring</li>
+                    <li>Retail floor coverage</li>
+                    <li>Remote monitoring for multi‑location businesses</li>
+                    <li>After‑hours incident review</li>
+                  </ul>
+                </div>
+                <div class="cap-block cap-pricing">
+                  <span class="cap-subhead">Pricing</span>
+                  <p>Scoped per engagement based on camera count, coverage area, and storage needs. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="capability-row" data-index="04">
+            <button class="capability-trigger" aria-expanded="false">
+              <span class="cap-index">04</span>
+              <span class="cap-title">Microsoft Cloud</span>
+              <span class="cap-tag badge">Productivity</span>
+              <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="capability-body">
+              <div class="cap-detail">
+                <p><strong>What it is —</strong> Office 365, SharePoint, Dynamics, and Azure implementation, including tenant setup, identity management, and security baselines.</p>
+                <div class="cap-block">
+                  <span class="cap-subhead">Typical use cases</span>
+                  <ul>
+                    <li>New‑tenant setup for a growing team</li>
+                    <li>Migrating from legacy email or file servers to M365</li>
+                    <li>Configuring Teams and SharePoint for collaboration</li>
+                    <li>Dynamics rollout for sales or operations teams</li>
+                  </ul>
+                </div>
+                <div class="cap-block cap-pricing">
+                  <span class="cap-subhead">Pricing</span>
+                  <p>Scoped per engagement based on user count and modules deployed. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="capability-row" data-index="05">
+            <button class="capability-trigger" aria-expanded="false">
+              <span class="cap-index">05</span>
+              <span class="cap-title">Workstations &amp; Builds</span>
+              <span class="cap-tag badge">Hardware</span>
+              <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="capability-body">
+              <div class="cap-detail">
+                <p><strong>What it is —</strong> Custom PCs, performance tuning, and peripheral setup — from component selection through OS installation and benchmarking.</p>
+                <div class="cap-block">
+                  <span class="cap-subhead">Typical use cases</span>
+                  <ul>
+                    <li>Fleet provisioning for new hires</li>
+                    <li>High‑performance builds for design, dev, or gaming workloads</li>
+                    <li>Upgrading aging office hardware</li>
+                    <li>Peripheral and multi‑monitor setup</li>
+                  </ul>
+                </div>
+                <div class="cap-block cap-pricing">
+                  <span class="cap-subhead">Pricing</span>
+                  <p>Scoped per build, depending on component selection and quantity. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="capability-row" data-index="06">
+            <button class="capability-trigger" aria-expanded="false">
+              <span class="cap-index">06</span>
+              <span class="cap-title">Data Recovery</span>
+              <span class="cap-tag badge">Recovery</span>
+              <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="capability-body">
+              <div class="cap-detail">
+                <p><strong>What it is —</strong> Professional recovery for HDD, SSD, and RAID systems, using a clone‑first workflow and secure handling of sensitive data.</p>
+                <div class="cap-block">
+                  <span class="cap-subhead">Typical use cases</span>
+                  <ul>
+                    <li>Recovering data after accidental deletion or drive failure</li>
+                    <li>RAID array rebuilds</li>
+                    <li>Recovering data from physically damaged drives</li>
+                    <li>Secure handling and disposal of recovered media</li>
+                  </ul>
+                </div>
+                <div class="cap-block cap-pricing">
+                  <span class="cap-subhead">Pricing</span>
+                  <p>Assessed after diagnostics — cost depends on failure type and media. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="capability-row" data-index="07">
+            <button class="capability-trigger" aria-expanded="false">
+              <span class="cap-index">07</span>
+              <span class="cap-title">Network Engineering</span>
+              <span class="cap-tag badge">Connectivity</span>
+              <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="capability-body">
+              <div class="cap-detail">
+                <p><strong>What it is —</strong> Enterprise routing, switching, and secure connectivity, including LAN/WAN design and bandwidth management.</p>
+                <div class="cap-block">
+                  <span class="cap-subhead">Typical use cases</span>
+                  <ul>
+                    <li>New‑office network design</li>
+                    <li>Multi‑branch WAN connectivity</li>
+                    <li>Secure guest and staff Wi‑Fi separation</li>
+                    <li>Bandwidth planning for a growing team</li>
+                  </ul>
+                </div>
+                <div class="cap-block cap-pricing">
+                  <span class="cap-subhead">Pricing</span>
+                  <p>Scoped per engagement based on site size and network complexity. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="capability-row" data-index="08">
+            <button class="capability-trigger" aria-expanded="false">
+              <span class="cap-index">08</span>
+              <span class="cap-title">Hosting &amp; Domains</span>
+              <span class="cap-tag badge">Hosting</span>
+              <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="capability-body">
+              <div class="cap-detail">
+                <p><strong>What it is —</strong> Managed hosting, SSL, and ongoing maintenance, including domain setup and performance monitoring.</p>
+                <div class="cap-block">
+                  <span class="cap-subhead">Typical use cases</span>
+                  <ul>
+                    <li>Hosting business websites and web apps</li>
+                    <li>Domain registration and DNS management</li>
+                    <li>SSL setup and renewal</li>
+                    <li>Ongoing uptime monitoring and patching</li>
+                  </ul>
+                </div>
+                <div class="cap-block cap-pricing">
+                  <span class="cap-subhead">Pricing</span>
+                  <p>Scoped per engagement based on hosting tier and maintenance level. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="capability-row" data-index="09">
+            <button class="capability-trigger" aria-expanded="false">
+              <span class="cap-index">09</span>
+              <span class="cap-title">Application Development</span>
+              <span class="cap-tag badge">Software</span>
+              <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="capability-body">
+              <div class="cap-detail">
+                <p><strong>What it is —</strong> Custom web and mobile apps built for performance and scale, from product discovery through full‑stack development and maintenance.</p>
+                <div class="cap-block">
+                  <span class="cap-subhead">Typical use cases</span>
+                  <ul>
+                    <li>Internal tools and dashboards</li>
+                    <li>Customer‑facing web or mobile apps</li>
+                    <li>Automating manual business workflows</li>
+                    <li>Modernizing legacy applications</li>
+                  </ul>
+                </div>
+                <div class="cap-block cap-pricing">
+                  <span class="cap-subhead">Pricing</span>
+                  <p>Scoped per project based on features, platforms, and timeline. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="capability-row" data-index="10">
+            <button class="capability-trigger" aria-expanded="false">
+              <span class="cap-index">10</span>
+              <span class="cap-title">Digital Signatures</span>
+              <span class="cap-tag badge">Identity</span>
+              <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="capability-body">
+              <div class="cap-detail">
+                <p><strong>What it is —</strong> Class 3 DSC issuance and secure document authentication, with renewal support and usage guidance for compliance workflows.</p>
+                <div class="cap-block">
+                  <span class="cap-subhead">Typical use cases</span>
+                  <ul>
+                    <li>Signing GST, MCA, and income‑tax filings</li>
+                    <li>e‑Tendering and government portal submissions</li>
+                    <li>Secure contract and document signing</li>
+                  </ul>
+                </div>
+                <div class="cap-block cap-pricing">
+                  <span class="cap-subhead">Pricing</span>
+                  <p>Based on DSC validity period and token requirements. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= 04 TECHNOLOGY / PLATFORMS ================= -->
+    <section class="section technology" id="technology">
+      <div class="container tech-grid">
+        <div class="tech-copy">
+          <p class="section-num reveal-up">03 / Technology</p>
+          <h2 class="reveal-up">Built on platforms your <span class="muted">team already trusts.</span></h2>
+          <p class="section-lead reveal-up muted">
+            We work across the stacks businesses already depend on — configured, secured,
+            and documented properly, not left as default installs.
+          </p>
+        </div>
+
+        <div class="tech-stack-list">
+          <div class="tech-domain reveal-up">
+            <span class="tech-domain-label">Cloud &amp; Productivity</span>
+            <div class="tech-tags">
+              <span class="tech-tag">Microsoft 365</span>
+              <span class="tech-tag">Azure</span>
+              <span class="tech-tag">SharePoint</span>
+              <span class="tech-tag">Dynamics</span>
+              <span class="tech-tag">Teams</span>
+            </div>
           </div>
-          <a class="btn primary" href="#enquiry">Schedule a Call</a>
+          <div class="tech-domain reveal-up">
+            <span class="tech-domain-label">Network &amp; Connectivity</span>
+            <div class="tech-tags">
+              <span class="tech-tag">LAN / WAN Design</span>
+              <span class="tech-tag">Secure Wi‑Fi</span>
+              <span class="tech-tag">Routing &amp; Switching</span>
+              <span class="tech-tag">Bandwidth Management</span>
+            </div>
+          </div>
+          <div class="tech-domain reveal-up">
+            <span class="tech-domain-label">Security &amp; Identity</span>
+            <div class="tech-tags">
+              <span class="tech-tag">Endpoint Protection</span>
+              <span class="tech-tag">Firewall Strategy</span>
+              <span class="tech-tag">Class 3 DSC</span>
+              <span class="tech-tag">Access Control</span>
+            </div>
+          </div>
+          <div class="tech-domain reveal-up">
+            <span class="tech-domain-label">Infrastructure &amp; Recovery</span>
+            <div class="tech-tags">
+              <span class="tech-tag">HDD / SSD Recovery</span>
+              <span class="tech-tag">RAID Systems</span>
+              <span class="tech-tag">IP Surveillance</span>
+              <span class="tech-tag">Managed Hosting</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- ================= 05 PROCESS ================= -->
+    <section class="section process-section" id="process">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-num reveal-up">04 / Process</p>
+          <h2 class="reveal-up">How we deliver.</h2>
+        </div>
+      </div>
+
+      <div class="process-scene" id="processScene">
+        <div class="process-stage" data-stage="1">
+          <div class="container process-stage-inner">
+            <span class="process-index">01</span>
+            <h3>Assess</h3>
+            <p class="muted">Understand requirements, risks, and the right‑fit architecture before a single system changes.</p>
+          </div>
+        </div>
+        <div class="process-stage" data-stage="2">
+          <div class="container process-stage-inner">
+            <span class="process-index">02</span>
+            <h3>Implement</h3>
+            <p class="muted">Deploy secure, scalable systems with minimal disruption to day‑to‑day operations.</p>
+          </div>
+        </div>
+        <div class="process-stage" data-stage="3">
+          <div class="container process-stage-inner">
+            <span class="process-index">03</span>
+            <h3>Support</h3>
+            <p class="muted">Ongoing monitoring, optimization, and fast response when it matters most.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 06 WHY BLUELOGIC ================= -->
+    <section class="section why" id="about">
+      <div class="container why-grid">
+        <div>
+          <p class="section-num reveal-up">05 / About</p>
+          <h2 class="reveal-up">A trusted IT partner, <span class="muted">not just a vendor.</span></h2>
+          <p class="section-lead reveal-up muted">
+            BlueLogic Digital (OPC) Pvt. Ltd is a trusted IT partner for businesses, offering
+            end‑to‑end solutions from infrastructure to managed services. We focus on
+            reliability, security, and business outcomes — engineered, not improvised.
+          </p>
+        </div>
+        <ul class="why-list">
+          <li class="why-item reveal-up">
+            <span class="why-num">01</span>
+            <div>
+              <h3>End‑to‑end accountability</h3>
+              <p class="muted">One partner across infrastructure, security, and support — no handoffs between vendors.</p>
+            </div>
+          </li>
+          <li class="why-item reveal-up">
+            <span class="why-num">02</span>
+            <div>
+              <h3>Security‑first planning</h3>
+              <p class="muted">Every deployment is designed around risk, access control, and audit‑readiness from day one.</p>
+            </div>
+          </li>
+          <li class="why-item reveal-up">
+            <span class="why-num">03</span>
+            <div>
+              <h3>Responsive, hands‑on support</h3>
+              <p class="muted">Direct access to the people who built your systems — not a ticket queue.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= 07 CTA ================= -->
+    <section class="section cta-section">
+      <div class="container">
+        <div class="cta-panel reveal-up">
+          <div>
+            <p class="section-num">06 / Next Step</p>
+            <h3>Let's engineer your next system.</h3>
+            <p class="muted">Tell us what you're running today — we'll tell you what it should look like.</p>
+          </div>
+          <a class="btn primary" href="#enquiry" data-magnetic>
+            Schedule a Call
+            <svg class="btn-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 12L12 2M12 2H4M12 2V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 08 ENQUIRY ================= -->
     <section class="section" id="enquiry">
       <div class="container">
-        <div class="section-title reveal">
-          <div>
-            <h2>Enquiry Form</h2>
-            <p>Tell us about your requirements and we will get back within one business day.</p>
-          </div>
+        <div class="section-head">
+          <p class="section-num reveal-up">07 / Enquiry</p>
+          <h2 class="reveal-up">Tell us about your requirements.</h2>
+          <p class="section-lead reveal-up muted">We'll get back to you within one business day.</p>
         </div>
-        <form class="enquiry-form reveal" action="mailto:info@bluelogicdigital.in" method="post" enctype="text/plain">
+
+        <form class="enquiry-form reveal-up" id="enquiryForm" action="mailto:info@bluelogicdigital.in" method="post" enctype="text/plain">
           <div class="field">
             <label for="name">Full Name</label>
-            <input id="name" name="name" type="text" placeholder="Your name" required>
+            <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required>
           </div>
           <div class="field">
             <label for="email">Work Email</label>
-            <input id="email" name="email" type="email" placeholder="you@company.com" required>
+            <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required>
           </div>
           <div class="field">
             <label for="phone">Phone Number</label>
-            <input id="phone" name="phone" type="tel" placeholder="+91 XXXXX XXXXX" required>
+            <input id="phone" name="phone" type="tel" placeholder="+91 XXXXX XXXXX" autocomplete="tel" required>
           </div>
           <div class="field">
             <label for="service">Service Interest</label>
@@ -360,6 +586,7 @@
               <option>Data Recovery</option>
               <option>Network Engineering</option>
               <option>Hosting &amp; Domains</option>
+              <option>Application Development</option>
               <option>Digital Signatures</option>
             </select>
           </div>
@@ -367,61 +594,57 @@
             <label for="message">Project Details</label>
             <textarea id="message" name="message" rows="4" placeholder="Tell us about your requirements"></textarea>
           </div>
-          <div class="field full">
-            <button class="btn primary" type="submit">Submit Enquiry</button>
+          <div class="field full form-submit-row">
+            <button class="btn primary" type="submit" data-magnetic>
+              Submit Enquiry
+              <svg class="btn-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 12L12 2M12 2H4M12 2V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <p class="form-status" id="formStatus" role="status"></p>
           </div>
         </form>
       </div>
     </section>
 
+    <!-- ================= 09 CONTACT ================= -->
     <section class="section" id="contact">
-      <div class="container">
-        <div class="section-title reveal">
-          <div>
-            <h2>Contact</h2>
-            <p>Reach out to discuss your requirements and get tailored recommendations.</p>
-          </div>
+      <div class="container contact-grid">
+        <div>
+          <p class="section-num reveal-up">08 / Contact</p>
+          <h2 class="reveal-up">Reach out directly.</h2>
+          <p class="section-lead reveal-up muted">Discuss your requirements and get tailored recommendations.</p>
         </div>
-        <div class="contact-card reveal">
-          <div>Email: <a href="mailto:info@bluelogicdigital.com">info@bluelogicdigital.in</a></div>
-          <div>Phone: <a href="tel:+919867699331">+91 98676 99331</a></div>
-          <div>
-            <a class="btn primary" href="https://wa.me/919867699331" target="_blank" rel="noreferrer">Chat on WhatsApp</a>
-          </div>
+        <div class="contact-card panel reveal-up">
+          <a class="contact-row" href="mailto:info@bluelogicdigital.in">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">info@bluelogicdigital.in</span>
+          </a>
+          <a class="contact-row" href="tel:+919867699331">
+            <span class="contact-label">Phone</span>
+            <span class="contact-value">+91 98676 99331</span>
+          </a>
+          <a class="btn primary contact-whatsapp" href="https://wa.me/919867699331" target="_blank" rel="noreferrer">
+            Chat on WhatsApp
+          </a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container">© 2025 BlueLogic Digital (OPC) Pvt. Ltd — All Rights Reserved.</div>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="brand">
+        <img src="assets/images/bluelogic-logo-256.png" alt="" width="28" height="28" />
+        <span class="brand-word" style="font-size:.95rem;">Blue<span>Logic</span></span>
+      </div>
+      <p class="muted">© 2026 BlueLogic Digital (OPC) Pvt. Ltd — All Rights Reserved.</p>
+      <a class="muted" href="mailto:info@bluelogicdigital.in">info@bluelogicdigital.in</a>
+    </div>
   </footer>
 
-  <script>
-    const hamb = document.getElementById('hamb');
-    const mainNav = document.getElementById('mainNav');
-    hamb.addEventListener('click', ()=>{ mainNav.classList.toggle('show'); });
-
-    const reveals = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries, obs)=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          entry.target.classList.add('visible');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, {threshold:0.15});
-    reveals.forEach(el=>io.observe(el));
-
-    const serviceCards = document.querySelectorAll('.services .card');
-    serviceCards.forEach(card=>{
-      card.addEventListener('click', ()=>{
-        serviceCards.forEach(other=>{
-          if(other !== card) other.classList.remove('open');
-        });
-        card.classList.toggle('open');
-      });
-    });
-  </script>
+  <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="js/network-canvas.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
