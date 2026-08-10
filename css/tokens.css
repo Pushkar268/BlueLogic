@@ -29,6 +29,8 @@
 
   /* ---- functional ---- */
   --warn:#e8a23a;
+  --danger:#f0708a;
+  --success:#6fd88f;
 
   /* ---- typography ---- */
   --font-display:"Space Grotesk", "IBM Plex Sans", system-ui, sans-serif;

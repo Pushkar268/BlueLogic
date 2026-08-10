@@ -116,11 +116,29 @@
           default, monitored continuously, and built by people who understand both the
           engineering and the business behind it.</span>
         </p>
-        <div class="pill-row reveal-up">
-          <span class="pill">Secure Infrastructure</span>
-          <span class="pill">Modern Cloud</span>
-          <span class="pill">Managed Services</span>
-          <span class="pill">Business Continuity</span>
+      </div>
+
+      <div class="ecosystem" aria-hidden="false">
+        <div class="container ecosystem-inner">
+          <div class="ecosystem-copy reveal-up">
+            <p class="eyebrow">One partner, connected systems</p>
+            <h2>The infrastructure behind your business — <span class="muted">handled as one system, not eight vendors.</span></h2>
+            <p class="muted">Cloud, security, networking, Microsoft platforms, hardware, software,
+              data, and business continuity are usually managed by separate vendors who don't talk
+              to each other. BlueLogic connects them under one accountable team.</p>
+          </div>
+
+          <div class="ecosystem-diagram reveal-up">
+            <svg id="ecosystemSvg" viewBox="0 0 600 600" role="img" aria-label="Diagram showing BlueLogic at the center, connected to Cloud, Security, Network, Microsoft, Data, Software, Devices, and Users">
+              <g id="ecosystemSpokes" stroke="var(--signal-0)" stroke-width="1.4" fill="none" opacity="0.55"></g>
+              <g id="ecosystemNodes" font-family="IBM Plex Mono, monospace"></g>
+              <g class="ecosystem-hub">
+                <circle cx="300" cy="300" r="54" fill="var(--surface-2)" stroke="var(--signal-0)" stroke-width="1.5"></circle>
+                <text x="300" y="296" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="18" fill="var(--ink-0)">Blue</text>
+                <text x="300" y="316" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="18" fill="var(--signal-0)">Logic</text>
+              </g>
+            </svg>
+          </div>
         </div>
       </div>
     </section>
@@ -130,283 +148,337 @@
       <div class="container">
         <div class="section-head">
           <p class="section-num reveal-up">02 / Capabilities</p>
-          <h2 class="reveal-up">Ten domains. <span class="muted">One accountable partner.</span></h2>
+          <h2 class="reveal-up">Ten domains, <span class="muted">delivered as four systems.</span></h2>
           <p class="section-lead reveal-up muted">
-            From core infrastructure to specialized services — each capability is delivered
-            end‑to‑end, not handed off between vendors.
+            We don't hand you off between vendors for each domain — everything below is
+            organized, delivered, and supported by one accountable team.
           </p>
         </div>
 
-        <ul class="capability-list" id="capabilityList">
-          <li class="capability-row" data-index="01">
-            <button class="capability-trigger" aria-expanded="false">
-              <span class="cap-index">01</span>
-              <span class="cap-title">Cloud &amp; Infrastructure</span>
-              <span class="cap-tag badge">Cloud</span>
-              <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="capability-body">
-              <div class="cap-detail">
-                <p><strong>What it is —</strong> Design, migration, and ongoing optimization of cloud and hybrid environments, built for secure, predictable scale rather than default configurations.</p>
-                <div class="cap-block">
-                  <span class="cap-subhead">Typical use cases</span>
-                  <ul>
-                    <li>Migrating on‑prem servers to the cloud</li>
-                    <li>Setting up backup and disaster recovery</li>
-                    <li>Scaling infrastructure for a growing team</li>
-                    <li>Consolidating multiple environments into one managed setup</li>
-                  </ul>
-                </div>
-                <div class="cap-block cap-pricing">
-                  <span class="cap-subhead">Pricing</span>
-                  <p>Scoped per engagement based on environment size and migration complexity. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
-                </div>
-              </div>
-            </div>
-          </li>
+        <div class="capability-layout">
+          <nav class="capability-rail" aria-label="Capability systems">
+            <a href="#group-infrastructure" data-rail="01"><span class="rail-num">01</span><span class="rail-label">Infrastructure</span></a>
+            <a href="#group-security" data-rail="02"><span class="rail-num">02</span><span class="rail-label">Security &amp; Continuity</span></a>
+            <a href="#group-workplace" data-rail="03"><span class="rail-num">03</span><span class="rail-label">Productivity &amp; Workplace</span></a>
+            <a href="#group-products" data-rail="04"><span class="rail-num">04</span><span class="rail-label">Digital Products</span></a>
+          </nav>
 
-          <li class="capability-row" data-index="02">
-            <button class="capability-trigger" aria-expanded="false">
-              <span class="cap-index">02</span>
-              <span class="cap-title">Security &amp; Compliance</span>
-              <span class="cap-tag badge">Security</span>
-              <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="capability-body">
-              <div class="cap-detail">
-                <p><strong>What it is —</strong> Endpoint protection, firewall strategy, and risk assessments that keep systems audit‑ready, with policy alignment and remediation guidance.</p>
-                <div class="cap-block">
-                  <span class="cap-subhead">Typical use cases</span>
-                  <ul>
-                    <li>Pre‑audit security reviews</li>
-                    <li>Rolling out endpoint protection across a device fleet</li>
-                    <li>Firewall and access‑policy hardening</li>
-                    <li>Incident‑readiness planning</li>
-                  </ul>
-                </div>
-                <div class="cap-block cap-pricing">
-                  <span class="cap-subhead">Pricing</span>
-                  <p>Scoped per engagement based on device count and compliance scope. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
+          <div class="capability-groups">
+            <div class="capability-group" id="group-infrastructure" data-rail-target="01">
+              <div class="group-head">
+                <span class="group-num">01</span>
+                <div>
+                  <h3 class="group-title">Infrastructure</h3>
+                  <p class="group-desc muted">The systems your business runs on — provisioned, connected, and kept online.</p>
                 </div>
               </div>
-            </div>
-          </li>
+              <ul class="capability-list">
+                <li class="capability-row" data-index="01">
+                  <button class="capability-trigger" aria-expanded="false">
+                    <span class="cap-index">01</span>
+                    <span class="cap-title">Cloud &amp; Infrastructure</span>
+                    <span class="cap-tag badge">Cloud</span>
+                    <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <div class="capability-body">
+                    <div class="cap-detail">
+                      <p><strong>What it is —</strong> Design, migration, and ongoing optimization of cloud and hybrid environments, built for secure, predictable scale rather than default configurations.</p>
+                      <div class="cap-block">
+                        <span class="cap-subhead">Typical use cases</span>
+                        <ul>
+                          <li>Migrating on‑prem servers to the cloud</li>
+                          <li>Setting up backup and disaster recovery</li>
+                          <li>Scaling infrastructure for a growing team</li>
+                          <li>Consolidating multiple environments into one managed setup</li>
+                        </ul>
+                      </div>
+                      <div class="cap-block cap-pricing">
+                        <span class="cap-subhead">Pricing</span>
+                        <p>Scoped per engagement based on environment size and migration complexity. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
 
-          <li class="capability-row" data-index="03">
-            <button class="capability-trigger" aria-expanded="false">
-              <span class="cap-index">03</span>
-              <span class="cap-title">Smart Surveillance</span>
-              <span class="cap-tag badge">Monitoring</span>
-              <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="capability-body">
-              <div class="cap-detail">
-                <p><strong>What it is —</strong> CCTV and IP camera systems with remote monitoring support, from site survey and placement through ongoing health checks.</p>
-                <div class="cap-block">
-                  <span class="cap-subhead">Typical use cases</span>
-                  <ul>
-                    <li>Office and warehouse security monitoring</li>
-                    <li>Retail floor coverage</li>
-                    <li>Remote monitoring for multi‑location businesses</li>
-                    <li>After‑hours incident review</li>
-                  </ul>
-                </div>
-                <div class="cap-block cap-pricing">
-                  <span class="cap-subhead">Pricing</span>
-                  <p>Scoped per engagement based on camera count, coverage area, and storage needs. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
-                </div>
-              </div>
-            </div>
-          </li>
+                <li class="capability-row" data-index="02">
+                  <button class="capability-trigger" aria-expanded="false">
+                    <span class="cap-index">02</span>
+                    <span class="cap-title">Network Engineering</span>
+                    <span class="cap-tag badge">Connectivity</span>
+                    <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <div class="capability-body">
+                    <div class="cap-detail">
+                      <p><strong>What it is —</strong> Enterprise routing, switching, and secure connectivity, including LAN/WAN design and bandwidth management.</p>
+                      <div class="cap-block">
+                        <span class="cap-subhead">Typical use cases</span>
+                        <ul>
+                          <li>New‑office network design</li>
+                          <li>Multi‑branch WAN connectivity</li>
+                          <li>Secure guest and staff Wi‑Fi separation</li>
+                          <li>Bandwidth planning for a growing team</li>
+                        </ul>
+                      </div>
+                      <div class="cap-block cap-pricing">
+                        <span class="cap-subhead">Pricing</span>
+                        <p>Scoped per engagement based on site size and network complexity. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
 
-          <li class="capability-row" data-index="04">
-            <button class="capability-trigger" aria-expanded="false">
-              <span class="cap-index">04</span>
-              <span class="cap-title">Microsoft Cloud</span>
-              <span class="cap-tag badge">Productivity</span>
-              <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="capability-body">
-              <div class="cap-detail">
-                <p><strong>What it is —</strong> Office 365, SharePoint, Dynamics, and Azure implementation, including tenant setup, identity management, and security baselines.</p>
-                <div class="cap-block">
-                  <span class="cap-subhead">Typical use cases</span>
-                  <ul>
-                    <li>New‑tenant setup for a growing team</li>
-                    <li>Migrating from legacy email or file servers to M365</li>
-                    <li>Configuring Teams and SharePoint for collaboration</li>
-                    <li>Dynamics rollout for sales or operations teams</li>
-                  </ul>
-                </div>
-                <div class="cap-block cap-pricing">
-                  <span class="cap-subhead">Pricing</span>
-                  <p>Scoped per engagement based on user count and modules deployed. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
-                </div>
-              </div>
+                <li class="capability-row" data-index="03">
+                  <button class="capability-trigger" aria-expanded="false">
+                    <span class="cap-index">03</span>
+                    <span class="cap-title">Hosting &amp; Domains</span>
+                    <span class="cap-tag badge">Hosting</span>
+                    <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <div class="capability-body">
+                    <div class="cap-detail">
+                      <p><strong>What it is —</strong> Managed hosting, SSL, and ongoing maintenance, including domain setup and performance monitoring.</p>
+                      <div class="cap-block">
+                        <span class="cap-subhead">Typical use cases</span>
+                        <ul>
+                          <li>Hosting business websites and web apps</li>
+                          <li>Domain registration and DNS management</li>
+                          <li>SSL setup and renewal</li>
+                          <li>Ongoing uptime monitoring and patching</li>
+                        </ul>
+                      </div>
+                      <div class="cap-block cap-pricing">
+                        <span class="cap-subhead">Pricing</span>
+                        <p>Scoped per engagement based on hosting tier and maintenance level. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </div>
-          </li>
 
-          <li class="capability-row" data-index="05">
-            <button class="capability-trigger" aria-expanded="false">
-              <span class="cap-index">05</span>
-              <span class="cap-title">Workstations &amp; Builds</span>
-              <span class="cap-tag badge">Hardware</span>
-              <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="capability-body">
-              <div class="cap-detail">
-                <p><strong>What it is —</strong> Custom PCs, performance tuning, and peripheral setup — from component selection through OS installation and benchmarking.</p>
-                <div class="cap-block">
-                  <span class="cap-subhead">Typical use cases</span>
-                  <ul>
-                    <li>Fleet provisioning for new hires</li>
-                    <li>High‑performance builds for design, dev, or gaming workloads</li>
-                    <li>Upgrading aging office hardware</li>
-                    <li>Peripheral and multi‑monitor setup</li>
-                  </ul>
-                </div>
-                <div class="cap-block cap-pricing">
-                  <span class="cap-subhead">Pricing</span>
-                  <p>Scoped per build, depending on component selection and quantity. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
+            <div class="capability-group" id="group-security" data-rail-target="02">
+              <div class="group-head">
+                <span class="group-num">02</span>
+                <div>
+                  <h3 class="group-title">Security &amp; Continuity</h3>
+                  <p class="group-desc muted">Reducing risk and keeping the business running when something goes wrong.</p>
                 </div>
               </div>
-            </div>
-          </li>
+              <ul class="capability-list">
+                <li class="capability-row" data-index="01">
+                  <button class="capability-trigger" aria-expanded="false">
+                    <span class="cap-index">01</span>
+                    <span class="cap-title">Security &amp; Compliance</span>
+                    <span class="cap-tag badge">Security</span>
+                    <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <div class="capability-body">
+                    <div class="cap-detail">
+                      <p><strong>What it is —</strong> Endpoint protection, firewall strategy, and risk assessments that keep systems audit‑ready, with policy alignment and remediation guidance.</p>
+                      <div class="cap-block">
+                        <span class="cap-subhead">Typical use cases</span>
+                        <ul>
+                          <li>Pre‑audit security reviews</li>
+                          <li>Rolling out endpoint protection across a device fleet</li>
+                          <li>Firewall and access‑policy hardening</li>
+                          <li>Incident‑readiness planning</li>
+                        </ul>
+                      </div>
+                      <div class="cap-block cap-pricing">
+                        <span class="cap-subhead">Pricing</span>
+                        <p>Scoped per engagement based on device count and compliance scope. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
 
-          <li class="capability-row" data-index="06">
-            <button class="capability-trigger" aria-expanded="false">
-              <span class="cap-index">06</span>
-              <span class="cap-title">Data Recovery</span>
-              <span class="cap-tag badge">Recovery</span>
-              <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="capability-body">
-              <div class="cap-detail">
-                <p><strong>What it is —</strong> Professional recovery for HDD, SSD, and RAID systems, using a clone‑first workflow and secure handling of sensitive data.</p>
-                <div class="cap-block">
-                  <span class="cap-subhead">Typical use cases</span>
-                  <ul>
-                    <li>Recovering data after accidental deletion or drive failure</li>
-                    <li>RAID array rebuilds</li>
-                    <li>Recovering data from physically damaged drives</li>
-                    <li>Secure handling and disposal of recovered media</li>
-                  </ul>
-                </div>
-                <div class="cap-block cap-pricing">
-                  <span class="cap-subhead">Pricing</span>
-                  <p>Assessed after diagnostics — cost depends on failure type and media. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
-                </div>
-              </div>
-            </div>
-          </li>
+                <li class="capability-row" data-index="02">
+                  <button class="capability-trigger" aria-expanded="false">
+                    <span class="cap-index">02</span>
+                    <span class="cap-title">Data Recovery</span>
+                    <span class="cap-tag badge">Recovery</span>
+                    <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <div class="capability-body">
+                    <div class="cap-detail">
+                      <p><strong>What it is —</strong> Professional recovery for HDD, SSD, and RAID systems, using a clone‑first workflow and secure handling of sensitive data.</p>
+                      <div class="cap-block">
+                        <span class="cap-subhead">Typical use cases</span>
+                        <ul>
+                          <li>Recovering data after accidental deletion or drive failure</li>
+                          <li>RAID array rebuilds</li>
+                          <li>Recovering data from physically damaged drives</li>
+                          <li>Secure handling and disposal of recovered media</li>
+                        </ul>
+                      </div>
+                      <div class="cap-block cap-pricing">
+                        <span class="cap-subhead">Pricing</span>
+                        <p>Assessed after diagnostics — cost depends on failure type and media, and we never guarantee recovery before diagnostics are complete. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
 
-          <li class="capability-row" data-index="07">
-            <button class="capability-trigger" aria-expanded="false">
-              <span class="cap-index">07</span>
-              <span class="cap-title">Network Engineering</span>
-              <span class="cap-tag badge">Connectivity</span>
-              <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="capability-body">
-              <div class="cap-detail">
-                <p><strong>What it is —</strong> Enterprise routing, switching, and secure connectivity, including LAN/WAN design and bandwidth management.</p>
-                <div class="cap-block">
-                  <span class="cap-subhead">Typical use cases</span>
-                  <ul>
-                    <li>New‑office network design</li>
-                    <li>Multi‑branch WAN connectivity</li>
-                    <li>Secure guest and staff Wi‑Fi separation</li>
-                    <li>Bandwidth planning for a growing team</li>
-                  </ul>
-                </div>
-                <div class="cap-block cap-pricing">
-                  <span class="cap-subhead">Pricing</span>
-                  <p>Scoped per engagement based on site size and network complexity. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
-                </div>
-              </div>
+                <li class="capability-row" data-index="03">
+                  <button class="capability-trigger" aria-expanded="false">
+                    <span class="cap-index">03</span>
+                    <span class="cap-title">Smart Surveillance</span>
+                    <span class="cap-tag badge">Monitoring</span>
+                    <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <div class="capability-body">
+                    <div class="cap-detail">
+                      <p><strong>What it is —</strong> CCTV and IP camera systems with remote monitoring support, from site survey and placement through ongoing health checks.</p>
+                      <div class="cap-block">
+                        <span class="cap-subhead">Typical use cases</span>
+                        <ul>
+                          <li>Office and warehouse security monitoring</li>
+                          <li>Retail floor coverage</li>
+                          <li>Remote monitoring for multi‑location businesses</li>
+                          <li>After‑hours incident review</li>
+                        </ul>
+                      </div>
+                      <div class="cap-block cap-pricing">
+                        <span class="cap-subhead">Pricing</span>
+                        <p>Scoped per engagement based on camera count, coverage area, and storage needs. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </div>
-          </li>
 
-          <li class="capability-row" data-index="08">
-            <button class="capability-trigger" aria-expanded="false">
-              <span class="cap-index">08</span>
-              <span class="cap-title">Hosting &amp; Domains</span>
-              <span class="cap-tag badge">Hosting</span>
-              <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="capability-body">
-              <div class="cap-detail">
-                <p><strong>What it is —</strong> Managed hosting, SSL, and ongoing maintenance, including domain setup and performance monitoring.</p>
-                <div class="cap-block">
-                  <span class="cap-subhead">Typical use cases</span>
-                  <ul>
-                    <li>Hosting business websites and web apps</li>
-                    <li>Domain registration and DNS management</li>
-                    <li>SSL setup and renewal</li>
-                    <li>Ongoing uptime monitoring and patching</li>
-                  </ul>
-                </div>
-                <div class="cap-block cap-pricing">
-                  <span class="cap-subhead">Pricing</span>
-                  <p>Scoped per engagement based on hosting tier and maintenance level. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
+            <div class="capability-group" id="group-workplace" data-rail-target="03">
+              <div class="group-head">
+                <span class="group-num">03</span>
+                <div>
+                  <h3 class="group-title">Productivity &amp; Workplace</h3>
+                  <p class="group-desc muted">The tools and hardware your team actually works in, day to day.</p>
                 </div>
               </div>
-            </div>
-          </li>
+              <ul class="capability-list">
+                <li class="capability-row" data-index="01">
+                  <button class="capability-trigger" aria-expanded="false">
+                    <span class="cap-index">01</span>
+                    <span class="cap-title">Microsoft Cloud</span>
+                    <span class="cap-tag badge">Productivity</span>
+                    <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <div class="capability-body">
+                    <div class="cap-detail">
+                      <p><strong>What it is —</strong> Office 365, SharePoint, Dynamics, and Azure implementation, including tenant setup, identity management, and security baselines.</p>
+                      <div class="cap-block">
+                        <span class="cap-subhead">Typical use cases</span>
+                        <ul>
+                          <li>New‑tenant setup for a growing team</li>
+                          <li>Migrating from legacy email or file servers to M365</li>
+                          <li>Configuring Teams and SharePoint for collaboration</li>
+                          <li>Dynamics rollout for sales or operations teams</li>
+                        </ul>
+                      </div>
+                      <div class="cap-block cap-pricing">
+                        <span class="cap-subhead">Pricing</span>
+                        <p>Scoped per engagement based on user count and modules deployed. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
 
-          <li class="capability-row" data-index="09">
-            <button class="capability-trigger" aria-expanded="false">
-              <span class="cap-index">09</span>
-              <span class="cap-title">Application Development</span>
-              <span class="cap-tag badge">Software</span>
-              <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="capability-body">
-              <div class="cap-detail">
-                <p><strong>What it is —</strong> Custom web and mobile apps built for performance and scale, from product discovery through full‑stack development and maintenance.</p>
-                <div class="cap-block">
-                  <span class="cap-subhead">Typical use cases</span>
-                  <ul>
-                    <li>Internal tools and dashboards</li>
-                    <li>Customer‑facing web or mobile apps</li>
-                    <li>Automating manual business workflows</li>
-                    <li>Modernizing legacy applications</li>
-                  </ul>
-                </div>
-                <div class="cap-block cap-pricing">
-                  <span class="cap-subhead">Pricing</span>
-                  <p>Scoped per project based on features, platforms, and timeline. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
-                </div>
-              </div>
-            </div>
-          </li>
+                <li class="capability-row" data-index="02">
+                  <button class="capability-trigger" aria-expanded="false">
+                    <span class="cap-index">02</span>
+                    <span class="cap-title">Workstations &amp; Builds</span>
+                    <span class="cap-tag badge">Hardware</span>
+                    <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <div class="capability-body">
+                    <div class="cap-detail">
+                      <p><strong>What it is —</strong> Custom PCs, performance tuning, and peripheral setup — from component selection through OS installation and benchmarking.</p>
+                      <div class="cap-block">
+                        <span class="cap-subhead">Typical use cases</span>
+                        <ul>
+                          <li>Fleet provisioning for new hires</li>
+                          <li>High‑performance builds for design, dev, or gaming workloads</li>
+                          <li>Upgrading aging office hardware</li>
+                          <li>Peripheral and multi‑monitor setup</li>
+                        </ul>
+                      </div>
+                      <div class="cap-block cap-pricing">
+                        <span class="cap-subhead">Pricing</span>
+                        <p>Scoped per build, depending on component selection and quantity. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
 
-          <li class="capability-row" data-index="10">
-            <button class="capability-trigger" aria-expanded="false">
-              <span class="cap-index">10</span>
-              <span class="cap-title">Digital Signatures</span>
-              <span class="cap-tag badge">Identity</span>
-              <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="capability-body">
-              <div class="cap-detail">
-                <p><strong>What it is —</strong> Class 3 DSC issuance and secure document authentication, with renewal support and usage guidance for compliance workflows.</p>
-                <div class="cap-block">
-                  <span class="cap-subhead">Typical use cases</span>
-                  <ul>
-                    <li>Signing GST, MCA, and income‑tax filings</li>
-                    <li>e‑Tendering and government portal submissions</li>
-                    <li>Secure contract and document signing</li>
-                  </ul>
-                </div>
-                <div class="cap-block cap-pricing">
-                  <span class="cap-subhead">Pricing</span>
-                  <p>Based on DSC validity period and token requirements. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
+                <li class="capability-row" data-index="03">
+                  <button class="capability-trigger" aria-expanded="false">
+                    <span class="cap-index">03</span>
+                    <span class="cap-title">Digital Signatures</span>
+                    <span class="cap-tag badge">Identity</span>
+                    <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <div class="capability-body">
+                    <div class="cap-detail">
+                      <p><strong>What it is —</strong> Class 3 DSC issuance and secure document authentication, with renewal support and usage guidance for compliance workflows.</p>
+                      <div class="cap-block">
+                        <span class="cap-subhead">Typical use cases</span>
+                        <ul>
+                          <li>Signing GST, MCA, and income‑tax filings</li>
+                          <li>e‑Tendering and government portal submissions</li>
+                          <li>Secure contract and document signing</li>
+                        </ul>
+                      </div>
+                      <div class="cap-block cap-pricing">
+                        <span class="cap-subhead">Pricing</span>
+                        <p>Based on DSC validity period and token requirements. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="capability-group" id="group-products" data-rail-target="04">
+              <div class="group-head">
+                <span class="group-num">04</span>
+                <div>
+                  <h3 class="group-title">Digital Products</h3>
+                  <p class="group-desc muted">Software built on top of the infrastructure we already manage for you.</p>
                 </div>
               </div>
+              <ul class="capability-list">
+                <li class="capability-row" data-index="01">
+                  <button class="capability-trigger" aria-expanded="false">
+                    <span class="cap-index">01</span>
+                    <span class="cap-title">Application Development</span>
+                    <span class="cap-tag badge">Software</span>
+                    <svg class="cap-chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <div class="capability-body">
+                    <div class="cap-detail">
+                      <p><strong>What it is —</strong> Custom web and mobile apps built for performance and scale, from product discovery through full‑stack development and maintenance.</p>
+                      <div class="cap-block">
+                        <span class="cap-subhead">Process</span>
+                        <ul>
+                          <li>Discover — requirements, users, and constraints</li>
+                          <li>Design — UX and technical architecture</li>
+                          <li>Build — full‑stack development</li>
+                          <li>Deploy — onto infrastructure we already manage</li>
+                          <li>Support — maintenance and iteration</li>
+                        </ul>
+                      </div>
+                      <div class="cap-block cap-pricing">
+                        <span class="cap-subhead">Pricing</span>
+                        <p>Scoped per project based on features, platforms, and timeline. <a class="cap-quote-link" href="#enquiry">Request a tailored quote →</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -562,18 +634,21 @@
           <p class="section-lead reveal-up muted">We'll get back to you within one business day.</p>
         </div>
 
-        <form class="enquiry-form reveal-up" id="enquiryForm" action="mailto:info@bluelogicdigital.in" method="post" enctype="text/plain">
+        <form class="enquiry-form reveal-up" id="enquiryForm" action="mailto:info@bluelogicdigital.in" method="post" enctype="text/plain" novalidate>
           <div class="field">
             <label for="name">Full Name</label>
-            <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required>
+            <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" aria-describedby="nameError" required>
+            <span class="field-error" id="nameError" role="alert"></span>
           </div>
           <div class="field">
             <label for="email">Work Email</label>
-            <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required>
+            <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" aria-describedby="emailError" required>
+            <span class="field-error" id="emailError" role="alert"></span>
           </div>
           <div class="field">
             <label for="phone">Phone Number</label>
-            <input id="phone" name="phone" type="tel" placeholder="+91 XXXXX XXXXX" autocomplete="tel" required>
+            <input id="phone" name="phone" type="tel" placeholder="+91 XXXXX XXXXX" autocomplete="tel" aria-describedby="phoneError" required>
+            <span class="field-error" id="phoneError" role="alert"></span>
           </div>
           <div class="field">
             <label for="service">Service Interest</label>
@@ -595,8 +670,9 @@
             <textarea id="message" name="message" rows="4" placeholder="Tell us about your requirements"></textarea>
           </div>
           <div class="field full form-submit-row">
-            <button class="btn primary" type="submit" data-magnetic>
-              Submit Enquiry
+            <button class="btn primary" type="submit" id="enquirySubmit" data-magnetic>
+              <span class="btn-label">Submit Enquiry</span>
+              <span class="btn-spinner" aria-hidden="true"></span>
               <svg class="btn-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 12L12 2M12 2H4M12 2V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <p class="form-status" id="formStatus" role="status"></p>
@@ -645,6 +721,7 @@
   <script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <script src="js/network-canvas.js"></script>
+  <script src="js/ecosystem.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
